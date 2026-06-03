@@ -268,6 +268,77 @@
     line-height: 1.4;
   }
 
+  /* === PROGRAM slide === */
+  .slide-program .content { justify-content: center; }
+  .slide-program .kicker {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .slide-program .kicker::before,
+  .slide-program .kicker::after {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .slide-program h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    color: var(--white);
+    max-width: 880px;
+  }
+  .slide-program .desc {
+    font-size: 26px;
+    line-height: 1.4;
+    color: var(--cream);
+    max-width: 860px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .slide-program ul {
+    list-style: none;
+    max-width: 860px;
+    margin-bottom: 36px;
+  }
+  .slide-program li {
+    font-size: 24px;
+    color: var(--cream);
+    padding: 12px 0 12px 46px;
+    position: relative;
+    line-height: 1.4;
+  }
+  .slide-program li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: var(--gold);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .slide-program .link {
+    display: inline-block;
+    padding: 14px 28px;
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
   /* === CTA slide === */
   .slide-cta .content {
     justify-content: center;

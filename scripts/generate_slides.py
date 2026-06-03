@@ -71,6 +71,18 @@ def render_cta(slide: dict) -> str:
     """
 
 
+def render_program(slide: dict) -> str:
+    items_html = "\n".join(f"<li>{html.escape(i)}</li>" for i in slide.get("items", []))
+    link = slide.get("link", "supraam.com.br")
+    return f"""
+    <div class="kicker">PROGRAMA SUPRA AM</div>
+    <h2>{html.escape(slide.get('headline', ''))}</h2>
+    <div class="desc">{html.escape(slide.get('desc', ''))}</div>
+    <ul>{items_html}</ul>
+    <div class="link">{html.escape(link)}</div>
+    """
+
+
 RENDERERS = {
     "hook": render_hook,
     "content": render_content,
@@ -78,6 +90,7 @@ RENDERERS = {
     "list": render_data_list,
     "comparison": render_comparison,
     "cta": render_cta,
+    "program": render_program,
 }
 
 
