@@ -30,21 +30,50 @@ API_VERSION = os.getenv("META_API_VERSION", "v23.0")
 BASE_URL = f"https://graph.instagram.com/{API_VERSION}"
 
 
-def host_image(image_path: Path) -> str:
-    """Hospeda imagem em URL publica via catbox.moe (API exige URL publica)."""
-    print(f"  Hospedando {image_path.name}...")
+UPLOAD_UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 SupraBot/1.0"
+
+
+def _upload_0x0(image_path: Path) -> str:
+    with open(image_path, "rb") as f:
+        resp = requests.post(
+            "https://0x0.st",
+            files={"file": (image_path.name, f, "image/png")},
+            headers={"User-Agent": UPLOAD_UA},
+            timeout=60,
+        )
+    url = resp.text.strip()
+    if not url.startswith("https://"):
+        raise RuntimeError(f"0x0.st rejeitou: {url[:200]}")
+    return url
+
+
+def _upload_catbox(image_path: Path) -> str:
     with open(image_path, "rb") as f:
         resp = requests.post(
             "https://catbox.moe/user/api.php",
             data={"reqtype": "fileupload"},
             files={"fileToUpload": (image_path.name, f, "image/png")},
+            headers={"User-Agent": UPLOAD_UA},
             timeout=60,
         )
     url = resp.text.strip()
     if not url.startswith("https://"):
-        raise RuntimeError(f"Falha no upload: {url}")
-    print(f"    URL: {url}")
+        raise RuntimeError(f"catbox.moe rejeitou: {url[:200]}")
     return url
+
+
+def host_image(image_path: Path) -> str:
+    """Hospeda imagem em URL publica. Tenta 0x0.st (ok em cloud), fallback catbox.moe."""
+    print(f"  Hospedando {image_path.name}...")
+    errors = []
+    for fn in (_upload_0x0, _upload_catbox):
+        try:
+            url = fn(image_path)
+            print(f"    URL: {url}")
+            return url
+        except Exception as e:
+            errors.append(f"{fn.__name__}: {e}")
+    raise RuntimeError("Todos os hosts falharam: " + " | ".join(errors))
 
 
 def create_single_container(image_url: str, caption: str) -> str:
