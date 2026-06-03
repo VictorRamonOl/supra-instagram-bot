@@ -1,0 +1,194 @@
+{
+  "batch_id": "001",
+  "created": "2026-06-02",
+  "calendar_ref": "editorial_calendar_v1.md",
+  "posts": [
+    {
+      "id": "01",
+      "slug": "pdde-guia-rapido",
+      "scheduled_for": "2026-06-08",
+      "pillar": "tecnico",
+      "format": "carousel",
+      "caption": "PDDE 2026 sem mistério.\n\nSe sua escola é Unidade Executora e você ainda fica em dúvida sobre o que pode ou não comprar com o recurso, esse carrossel é seu novo guia rápido.\n\nSalve esse post pra consultar quando for elaborar seu próximo plano de aplicação.\n\nDúvida específica? Comenta aqui ou chama no direct. Respondemos com base na Resolução do FNDE em vigor.\n\n#PDDE #FNDE #GestaoEscolar #EducacaoAmazonas #ComprasPublicas #UnidadeExecutora",
+      "slides": [
+        {"type": "hook", "headline": "PDDE 2026", "subheadline": "O guia rápido pra quem é Unidade Executora", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / O básico", "headline": "O que é o PDDE", "body": "Programa Dinheiro Direto na Escola. Recurso federal repassado direto à UEx (Unidade Executora) pra cobrir necessidades de manutenção, conservação e pequenos investimentos. Quem decide a aplicação é o conselho da escola."},
+        {"type": "content", "kicker": "2 / Modalidades", "headline": "Três faces do PDDE", "body": "Básico: rotina da escola.\nEquidade: redução de desigualdades.\nQualidade: melhoria da aprendizagem.\n\nCada modalidade tem regras próprias na Resolução do FNDE."},
+        {"type": "content", "kicker": "3 / Custeio x Capital", "headline": "Aprenda essa diferença e pare de errar", "body": "Custeio: bens de consumo e serviços. Ex.: papel A4, manutenção.\n\nCapital: bens permanentes. Ex.: cadeiras, computadores, mobiliário.\n\nA Portaria 448/2002 não admite mistura — sob pena de devolução do recurso."},
+        {"type": "data", "kicker": "4 / O que NÃO pode", "headline": "4 vedações que muito gestor ainda erra", "items": ["Uniformes escolares", "Festividades e premiações", "Construção ou reforma estrutural", "Câmeras de vigilância"]},
+        {"type": "content", "kicker": "5 / Prestação de contas", "headline": "Sem dor de cabeça", "body": "Nota fiscal com descrição técnica padronizada conforme a rubrica.\n\nDocumentação completa: NF + recibo + termo de doação (se aplicável).\n\nGuarde tudo organizado por exercício."},
+        {"type": "cta", "headline": "Dúvida na sua compra PDDE?", "body": "Comenta aqui ou chama no direct.\nRespondemos com base na Resolução em vigor.", "footer": "@grupo.supraam"}
+      ],
+      "hashtags": "#PDDE #FNDE #GestaoEscolar #EducacaoAmazonas #ComprasPublicas #UnidadeExecutora #Educacao"
+    },
+    {
+      "id": "02",
+      "slug": "mobiliario-5-erros",
+      "scheduled_for": "2026-06-10",
+      "pillar": "catalogo",
+      "format": "single",
+      "caption": "Mobiliário escolar parece compra simples. Não é.\n\nLista os 5 erros mais comuns que aparecem nas prestações de contas que recebemos pra orientar. Salva esse post antes do seu próximo edital de mobiliário.\n\n#MobiliarioEscolar #PDDE #FNDE #ComprasPublicas #GestaoEscolar #EducacaoAmazonas",
+      "slides": [
+        {"type": "list", "kicker": "Compras públicas", "headline": "Mobiliário escolar: 5 erros que pesam na prestação de contas", "items": ["Madeira sem certificação ambiental", "Sem laudo ergonômico INMETRO", "Descrição genérica na nota fiscal", "Sem manual técnico ou termo de garantia", "Sem prazo de troca declarado no edital"], "footer": "Salve esse post pra revisar antes da próxima compra."}
+      ],
+      "hashtags": "#MobiliarioEscolar #PDDE #FNDE #ComprasPublicas #GestaoEscolar"
+    },
+    {
+      "id": "03",
+      "slug": "logistica-interior-am",
+      "scheduled_for": "2026-06-12",
+      "pillar": "regional",
+      "format": "carousel",
+      "caption": "Sua escola fica a 8h de barco da capital. Como o material chega lá?\n\nNo Amazonas, logística educacional é uma engenharia à parte. Esse carrossel explica como funciona de verdade — pra você não cair em prazo de entrega irreal no próximo edital.\n\n#EducacaoAmazonas #EscolaRibeirinha #LogisticaAM #ComprasPublicas #GestaoEscolar",
+      "slides": [
+        {"type": "hook", "headline": "Como o material chega no interior do AM?", "subheadline": "A logística que ninguém te conta no edital", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / Modais", "headline": "Quatro caminhos possíveis", "body": "Caminhão para a parte rodoviária.\nBalsa para travessias de longa distância.\nVoadeira para ramais fluviais menores.\nAéreo para casos urgentes ou áreas isoladas.\n\nO modal certo varia por município."},
+        {"type": "content", "kicker": "2 / Prazo realista", "headline": "35 a 60 dias úteis — entenda", "body": "Esse é o intervalo padrão entre pedido formal e entrega no destino.\n\nIncluí: fabricação, conferência, embalagem específica para travessia fluvial, despacho e modal final.\n\nFornecedor que promete menos disso geralmente não conhece o interior."},
+        {"type": "data", "kicker": "3 / Edital", "headline": "Frete incluso ou separado?", "items": ["Incluso: previsível, sem surpresa orçamentária", "Separado: parece mais barato, custa mais no final", "Sempre exija logística reversa em caso de defeito"]},
+        {"type": "content", "kicker": "4 / Sazonalidade", "headline": "Cheia e seca mudam o jogo", "body": "Cheia (dez–jun): rios navegáveis, prazo melhor para fluvial.\n\nSeca (jul–nov): muitos igarapés inviáveis, modal aéreo vira regra em alguns trechos.\n\nPlaneje o cronograma de compras sabendo onde sua escola está nesse ciclo."},
+        {"type": "cta", "headline": "Está montando edital pro interior?", "body": "Salve esse post e use o checklist na hora de redigir.", "footer": "@grupo.supraam"}
+      ],
+      "hashtags": "#EducacaoAmazonas #EscolaRibeirinha #LogisticaAM #ComprasPublicas #GestaoEscolar #EducacaoNoNorte"
+    },
+    {
+      "id": "04",
+      "slug": "srm-resolucao-fnde",
+      "scheduled_for": "2026-06-15",
+      "pillar": "tecnico",
+      "format": "carousel",
+      "caption": "Toda escola que recebe Sala de Recursos Multifuncionais tem uma checklist obrigatória pra cumprir.\n\nResumimos aqui o que diz a Resolução do FNDE pra você não errar no orçamento nem na prestação de contas.\n\nVai implantar SRM em 2026? Chama no direct pra orçamento técnico.\n\n#SRM #InclusaoEscolar #PDDE #FNDE #EducacaoEspecial #SalaDeRecursos",
+      "slides": [
+        {"type": "hook", "headline": "Sala de Recursos Multifuncionais", "subheadline": "O que diz a Resolução FNDE — e como não errar", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / O que é", "headline": "Espaço de Atendimento Educacional Especializado", "body": "Sala equipada para atender estudantes com deficiência, transtornos globais e altas habilidades — no contraturno da educação regular.\n\nObrigatória em escolas com matrículas elegíveis para AEE."},
+        {"type": "content", "kicker": "2 / Tipos", "headline": "Tipo 1 e Tipo 2", "body": "Tipo 1: configuração padrão, atende a maior parte das deficiências.\n\nTipo 2: amplia o Tipo 1 com recursos para deficiência visual (impressora Braille, scanner com voz, lupas eletrônicas)."},
+        {"type": "data", "kicker": "3 / Equipamentos obrigatórios", "headline": "Não pode faltar", "items": ["Microcomputadores e estabilizadores", "Scanner e impressora", "Materiais pedagógicos adaptados", "Mobiliário ergonômico ajustável", "Recursos de tecnologia assistiva"]},
+        {"type": "content", "kicker": "4 / Erro comum", "headline": "Comprar sem laudo técnico", "body": "Equipamento de tecnologia assistiva exige laudo que comprove conformidade com a finalidade pedagógica.\n\nSem o laudo, o TCE pode glosar o item na prestação de contas."},
+        {"type": "content", "kicker": "5 / Descrição na NF", "headline": "Atenção redobrada", "body": "Cada item precisa ser descrito com especificações técnicas — não vale 'cadeira escolar'. Vale 'cadeira universitária com prancheta, altura ajustável, encosto anatômico'.\n\nIsso protege a prestação de contas."},
+        {"type": "cta", "headline": "Vai implantar SRM em 2026?", "body": "Chame no direct pra orçamento já enquadrado nas especificações FNDE.", "footer": "@grupo.supraam"}
+      ],
+      "hashtags": "#SRM #InclusaoEscolar #PDDE #FNDE #EducacaoEspecial #SalaDeRecursos #AEE"
+    },
+    {
+      "id": "05",
+      "slug": "brinquedo-3-perguntas",
+      "scheduled_for": "2026-06-17",
+      "pillar": "catalogo",
+      "format": "single",
+      "caption": "Brinquedo pedagógico não é brinquedo qualquer. Antes de comprar pro PDDE, responda essas 3 perguntas.\n\nComenta aqui: qual produto mais te causa dúvida na hora de comprar?\n\n#BrinquedoPedagogico #PDDE #FNDE #GestaoEscolar #EducacaoInfantil #ComprasPublicas",
+      "slides": [
+        {"type": "list", "kicker": "Checklist técnico", "headline": "Brinquedo pedagógico: 3 perguntas antes de comprar", "items": ["Tem certificação INMETRO de segurança?", "Atende qual faixa etária e qual habilidade BNCC?", "É elegível pelo enquadramento PDDE da rubrica?"], "footer": "Compartilhe com quem está montando lista de compras."}
+      ],
+      "hashtags": "#BrinquedoPedagogico #PDDE #FNDE #GestaoEscolar #EducacaoInfantil"
+    },
+    {
+      "id": "06",
+      "slug": "censo-escolar-am",
+      "scheduled_for": "2026-06-19",
+      "pillar": "regional",
+      "format": "carousel",
+      "caption": "O Censo Escolar é a fotografia mais precisa que existe sobre a educação no Amazonas. Olhar pra esses dados é o ponto de partida pra qualquer planejamento sério.\n\nSeparamos 3 indicadores que todo gestor do AM precisa ter na cabeça em 2026.\n\nFonte: INEP — Censo Escolar.\n\n#CensoEscolar #EducacaoAmazonas #GestaoEscolar #EducacaoNoNorte #EscolaRibeirinha",
+      "slides": [
+        {"type": "hook", "headline": "Censo Escolar AM", "subheadline": "3 dados que todo gestor do Amazonas precisa saber", "footer": "Fonte: INEP"},
+        {"type": "data", "kicker": "1 / Localização", "headline": "Onde estão as escolas do AM", "body": "Mais de metade da rede pública estadual e municipal do Amazonas opera em zona rural, ribeirinha ou indígena.\n\nIsso muda completamente o desenho de qualquer política educacional."},
+        {"type": "data", "kicker": "2 / Infraestrutura", "headline": "Energia elétrica não é garantida", "body": "Uma fatia relevante das escolas rurais do AM ainda enfrenta energia intermitente ou ausente em parte do dia.\n\nDecisão sobre tecnologia (computador, lousa digital, impressora) precisa considerar isso."},
+        {"type": "data", "kicker": "3 / Tecnologia", "headline": "Sala de informática nem sempre funciona", "body": "Equipamento instalado nem sempre é equipamento operante. Manutenção e formação docente costumam ser o gargalo.\n\nComprar bem é só metade do trabalho — sustentar o uso é a outra."},
+        {"type": "cta", "headline": "Qual desses dados mais te preocupa?", "body": "Comenta aqui. A gente lê tudo.", "footer": "@grupo.supraam"}
+      ],
+      "hashtags": "#CensoEscolar #EducacaoAmazonas #GestaoEscolar #EducacaoNoNorte #EscolaRibeirinha"
+    },
+    {
+      "id": "07",
+      "slug": "educacao-conectada",
+      "scheduled_for": "2026-06-22",
+      "pillar": "tecnico",
+      "format": "carousel",
+      "caption": "Programa Educação Conectada não é só sobre internet. Entender o desenho completo do programa abre opções que muita escola deixa passar.\n\nDúvida sobre se sua escola é elegível? Chama no direct.\n\n#EducacaoConectada #PDDE #FNDE #TecnologiaNaEducacao #GestaoEscolar",
+      "slides": [
+        {"type": "hook", "headline": "Educação Conectada", "subheadline": "Não é só internet — sabia?", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / O que cobre", "headline": "Três frentes integradas", "body": "Conectividade (link de internet).\nDispositivos (notebooks, tablets, lousas).\nCapacitação docente (formação e suporte pedagógico).\n\nO programa pensa as três juntas — escola que só foca em uma perde valor."},
+        {"type": "content", "kicker": "2 / Quem adere", "headline": "Critérios de elegibilidade", "body": "Escolas públicas das redes municipais, estaduais e federais com matrícula no censo escolar.\n\nPriorização varia por edital e por programa.\n\nVerifique sempre a Resolução vigente."},
+        {"type": "content", "kicker": "3 / Como o recurso entra", "headline": "PDDE Conectividade", "body": "Recurso descentralizado via PDDE, com rubrica específica.\n\nAplicação direcionada conforme plano de aplicação aprovado pelo conselho da UEx."},
+        {"type": "data", "kicker": "4 / O que NÃO entra", "headline": "Cuidado com a rubrica", "items": ["Manutenção predial geral", "Mobiliário não-tecnológico", "Material de consumo não relacionado", "Despesas correntes não vinculadas"]},
+        {"type": "cta", "headline": "Sua escola é elegível?", "body": "Chame no direct e a gente analisa.", "footer": "@grupo.supraam"}
+      ],
+      "hashtags": "#EducacaoConectada #PDDE #FNDE #TecnologiaNaEducacao #GestaoEscolar"
+    },
+    {
+      "id": "08",
+      "slug": "lousa-projetor-tv",
+      "scheduled_for": "2026-06-24",
+      "pillar": "catalogo",
+      "format": "single",
+      "caption": "Lousa digital, projetor ou TV interativa? A escolha certa varia muito por porte de escola, infraestrutura elétrica e perfil pedagógico.\n\nSalve esse comparativo pra usar na próxima reunião com a direção.\n\n#TecnologiaNaEducacao #LousaDigital #ProjetorEscolar #PDDE #GestaoEscolar",
+      "slides": [
+        {"type": "comparison", "kicker": "Comparativo técnico", "headline": "Lousa digital × Projetor × TV interativa", "columns": [{"name": "Lousa Digital", "rows": ["Custo: alto", "Vida útil: ~7 anos", "Manutenção: técnica", "Ideal: escola média/grande"]}, {"name": "Projetor", "rows": ["Custo: baixo", "Vida útil: ~3 anos (lâmpada)", "Manutenção: simples", "Ideal: escola pequena"]}, {"name": "TV Interativa", "rows": ["Custo: médio", "Vida útil: ~10 anos", "Manutenção: baixa", "Ideal: escola média"]}], "footer": "Salve pra mostrar pra direção."}
+      ],
+      "hashtags": "#TecnologiaNaEducacao #LousaDigital #ProjetorEscolar #PDDE #GestaoEscolar"
+    },
+    {
+      "id": "09",
+      "slug": "srm-subutilizada",
+      "scheduled_for": "2026-06-26",
+      "pillar": "regional",
+      "format": "carousel",
+      "caption": "Sua escola tem Sala de Recursos Multifuncionais e ela passa o dia trancada? Você não está sozinho.\n\nDiagnosticamos esse cenário com frequência em escolas do Norte. Esse carrossel explica por que isso acontece — e o caminho pra mudar.\n\n#SRM #InclusaoEscolar #AEE #EducacaoEspecial #EducacaoNoNorte",
+      "slides": [
+        {"type": "hook", "headline": "SRM trancada", "subheadline": "Por que tantas Salas de Recursos do Norte ainda não funcionam", "footer": "Carrossel — Supra AM"},
+        {"type": "data", "kicker": "1 / Realidade", "headline": "Um padrão silencioso", "body": "Implantação de SRM cresceu na última década no Norte, mas a taxa de uso efetivo não acompanhou.\n\nResultado: equipamento parado, recurso desperdiçado, aluno sem atendimento."},
+        {"type": "data", "kicker": "2 / Causas", "headline": "Os 3 motivos mais comuns", "items": ["Ausência de professor de AEE alocado", "Equipamento sem manutenção corretiva", "Falta de formação para a equipe pedagógica"]},
+        {"type": "content", "kicker": "3 / Marco legal", "headline": "A Lei Brasileira de Inclusão exige", "body": "LBI (Lei 13.146/2015) determina o direito ao Atendimento Educacional Especializado.\n\nSRM ociosa é descumprimento de direito — não é só ineficiência."},
+        {"type": "data", "kicker": "4 / Caminho de saída", "headline": "Três passos práticos", "items": ["Diagnóstico técnico do estado dos equipamentos", "Plano de uso pedagógico assinado pelo conselho", "Capacitação local com profissional de AEE"]},
+        {"type": "cta", "headline": "Quer um diagnóstico técnico da sua SRM?", "body": "Chame no direct. A primeira análise é gratuita.", "footer": "@grupo.supraam"}
+      ],
+      "hashtags": "#SRM #InclusaoEscolar #AEE #EducacaoEspecial #EducacaoNoNorte"
+    },
+    {
+      "id": "10",
+      "slug": "cantinho-leitura-7030",
+      "scheduled_for": "2026-06-29",
+      "pillar": "tecnico",
+      "format": "carousel",
+      "caption": "70% e 30%. Se você nunca ouviu falar dessa regra do Cantinho da Leitura, esse carrossel é pra você.\n\nÉ uma das regras do PDDE que mais gera erro de prestação de contas — e é simples de cumprir quando se entende.\n\nVai aplicar Cantinho da Leitura? Chama no direct pra kit técnico já enquadrado.\n\n#CantinhoDaLeitura #PDDE #FNDE #LeituraNaEscola #GestaoEscolar",
+      "slides": [
+        {"type": "hook", "headline": "Cantinho da Leitura", "subheadline": "A regra 70/30 explicada (e por que tanta escola erra)", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / Origem", "headline": "De onde vem a regra", "body": "A Resolução do FNDE que cria o programa Cantinho da Leitura define a divisão obrigatória do recurso.\n\n70% para acervo (livros e revistas).\n30% para o espaço (mobiliário e mídia)."},
+        {"type": "data", "kicker": "2 / Os 70%", "headline": "Acervo elegível", "items": ["Livros de literatura infantil e juvenil", "Livros paradidáticos", "Revistas educativas catalogadas", "Materiais de leitura adaptada (Braille / LIBRAS)"]},
+        {"type": "data", "kicker": "3 / Os 30%", "headline": "Espaço elegível", "items": ["Estantes baixas e expositores", "Almofadas e tapetes", "Pufes e mobiliário lúdico", "Decoração temática educativa"]},
+        {"type": "content", "kicker": "4 / Erro frequente", "headline": "100% em livros = recurso perdido", "body": "Aplicar todo o recurso no acervo parece o mais 'pedagógico', mas viola a regra.\n\nA prestação de contas é glosada e a escola pode ser obrigada a devolver."},
+        {"type": "content", "kicker": "5 / Boa prática", "headline": "Planeje desde o início", "body": "Monte a planilha do plano de aplicação respeitando o 70/30 antes de pedir orçamento.\n\nFornecedor que entende a regra te entrega tudo já enquadrado."},
+        {"type": "cta", "headline": "Vai aplicar Cantinho da Leitura?", "body": "Chame no direct e receba kit técnico já enquadrado no 70/30.", "footer": "@grupo.supraam"}
+      ],
+      "hashtags": "#CantinhoDaLeitura #PDDE #FNDE #LeituraNaEscola #GestaoEscolar"
+    },
+    {
+      "id": "11",
+      "slug": "compras-publicas-2026",
+      "scheduled_for": "2026-07-01",
+      "pillar": "catalogo",
+      "format": "single",
+      "caption": "O que mudou nas compras públicas educacionais em 2026? Resumo do que afeta escola, UEx e secretaria — pra você não ser pego de surpresa no próximo edital.\n\nSalve esse post — vai te servir até dezembro.\n\n#ComprasPublicas #PNCP #LicitacoesPublicas #GestaoEscolar #PDDE",
+      "slides": [
+        {"type": "list", "kicker": "Atualização 2026", "headline": "Compras públicas: o que mudou pra escola e UEx", "items": ["PNCP unificou a publicação de editais — fim das dispersões locais", "Dispensa eletrônica passou a ser regra na maioria dos casos", "Prazos de propostas e impugnações mudaram", "Catálogo eletrônico integrado por categoria de produto"], "footer": "Salve esse post — vai te servir até dezembro."}
+      ],
+      "hashtags": "#ComprasPublicas #PNCP #LicitacoesPublicas #GestaoEscolar #PDDE"
+    },
+    {
+      "id": "12",
+      "slug": "5-perguntas-fornecedor",
+      "scheduled_for": "2026-07-03",
+      "pillar": "regional",
+      "format": "carousel",
+      "caption": "Já comprou e veio item errado, prazo estourou, nota fiscal com problema?\n\nEsse checklist de 5 perguntas, feito por quem entrega no interior do Norte há anos, evita 90% dessas dores.\n\nUsa no próximo orçamento.\n\n#ComprasPublicas #GestaoEscolar #PDDE #FNDE #EducacaoAmazonas #LogisticaEducacional",
+      "slides": [
+        {"type": "hook", "headline": "5 perguntas antes de comprar de um fornecedor", "subheadline": "Checklist de quem entrega no interior do Norte", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / CNAE", "headline": "O CNAE bate com o item?", "body": "Fornecedor precisa ter CNAE compatível com o tipo de produto na sua nota fiscal.\n\nCNAE incompatível = NF glosada na prestação de contas."},
+        {"type": "content", "kicker": "2 / Descrição NF", "headline": "Padrão FNDE na descrição", "body": "Toda NF educacional precisa de descrição técnica padronizada da rubrica.\n\nFornecedor experiente já entrega assim — sem precisar pedir."},
+        {"type": "content", "kicker": "3 / Frete", "headline": "Incluso ou separado?", "body": "Incluso: você sabe o custo total no momento da assinatura.\n\nSeparado: parece mais barato, geralmente custa mais — e pode estourar prazo."},
+        {"type": "content", "kicker": "4 / Assistência", "headline": "Tem suporte técnico regional?", "body": "Equipamento com problema em Tabatinga e fornecedor em São Paulo é dor de cabeça garantida.\n\nPergunte o tempo médio de resposta e o canal de acionamento."},
+        {"type": "content", "kicker": "5 / Modal", "headline": "Já entregou nesse modal antes?", "body": "Balsa, voadeira, modal aéreo — cada um tem suas exigências de embalagem.\n\nFornecedor sem experiência tem mais perda em trânsito (e o problema vira seu)."},
+        {"type": "cta", "headline": "Salve esse checklist", "body": "Aplica no próximo orçamento. Te poupa tempo e dinheiro.", "footer": "@grupo.supraam"}
+      ],
+      "hashtags": "#ComprasPublicas #GestaoEscolar #PDDE #FNDE #EducacaoAmazonas #LogisticaEducacional"
+    }
+  ]
+}

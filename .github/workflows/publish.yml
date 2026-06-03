@@ -1,0 +1,58 @@
+name: Publish to Instagram
+
+on:
+  schedule:
+    # Horarios em UTC (Brasil = UTC-3)
+    - cron: '0 12 * * 1'   # Segunda 09h BR
+    - cron: '0 16 * * 3'   # Quarta  13h BR
+    - cron: '0 21 * * 5'   # Sexta   18h BR
+  workflow_dispatch:        # Permite disparo manual pela aba Actions
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write       # Para commitar /published/ de volta
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Create .env from secrets
+        env:
+          IG_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          IG_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          IG_SECRET: ${{ secrets.INSTAGRAM_APP_SECRET }}
+        run: |
+          cat > .env <<EOF
+          INSTAGRAM_USER_ID=$IG_USER_ID
+          INSTAGRAM_ACCESS_TOKEN=$IG_TOKEN
+          INSTAGRAM_APP_SECRET=$IG_SECRET
+          INSTAGRAM_TOKEN_REFRESHED_AT=2026-06-02
+          META_API_VERSION=v23.0
+          INSTAGRAM_HANDLE=grupo.supraam
+          EOF
+
+      - name: Publish next approved post
+        run: python scripts/publish_next_approved.py
+
+      - name: Commit changes (moved to /published/)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          rm -f .env
+          git add content/
+          if git diff --cached --quiet; then
+            echo "Sem mudancas para commitar."
+          else
+            git commit -m "auto-publish: $(date -u +%Y-%m-%d_%H%M)"
+            git push
+          fi

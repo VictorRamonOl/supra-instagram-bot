@@ -1,0 +1,28 @@
+# Segredos — NUNCA commitar
+.env
+.env.local
+*.secret
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Cache de browsers Playwright (so usado localmente)
+.playwright/
+.cache/
+
+# Arquivos de review HTML (gerados localmente)
+content/_review_pending.html
+content/_feed_preview.html
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Sistema
+Thumbs.db
+.DS_Store
