@@ -88,7 +88,7 @@ Slide de oferta institucional — penúltimo do carrossel (antes do CTA).
 Último slide do carrossel.
 - Centralizado verticalmente
 - Headline pergunta direta
-- Body com instrução
+- Body com instrução **+ sempre menção a `supraam.com.br`** ("Visite supraam.com.br pra ver todos os kits.")
 - Botão dourado com `@grupo.supraam`
 
 ---
@@ -120,8 +120,12 @@ Slide de oferta institucional — penúltimo do carrossel (antes do CTA).
 
 [Linha de CTA — "Salve" / "Comenta" / "Chama no direct"]
 
+Conheça todos os nossos kits em supraam.com.br
+
 [Hashtags — 5 a 8, sempre quebra de linha antes]
 ```
+
+> **Site CTA é padrão fixo em toda caption** — drives traffic pro supraam.com.br. Nunca remover.
 
 ### Tom de voz
 - Formal-acessível (como o site)
