@@ -62,9 +62,26 @@ def _upload_catbox(image_path: Path) -> str:
     return url
 
 
+def _raw_github_url(image_path: Path) -> str | None:
+    """Se rodando no GitHub Actions (repo publico), monta a URL raw direto."""
+    repo = os.getenv("GITHUB_REPOSITORY")
+    sha = os.getenv("GITHUB_SHA")
+    if not repo or not sha:
+        return None
+    rel = image_path.resolve().relative_to(PROJECT_ROOT.resolve()).as_posix()
+    return f"https://raw.githubusercontent.com/{repo}/{sha}/{rel}"
+
+
 def host_image(image_path: Path) -> str:
-    """Hospeda imagem em URL publica. Tenta 0x0.st (ok em cloud), fallback catbox.moe."""
+    """Hospeda imagem em URL publica. Em GH Actions usa raw URL (repo publico).
+    Localmente, tenta 0x0.st -> catbox.moe."""
     print(f"  Hospedando {image_path.name}...")
+
+    gh_url = _raw_github_url(image_path)
+    if gh_url:
+        print(f"    URL (GH raw): {gh_url}")
+        return gh_url
+
     errors = []
     for fn in (_upload_0x0, _upload_catbox):
         try:
