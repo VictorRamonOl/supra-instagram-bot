@@ -1,100 +1,175 @@
-# Setup GitHub Actions — versão simplificada (via gh CLI)
+# Setup GitHub Actions — Publicação 100% automática
 
-Tempo: ~5 min. Só faz uma vez.
+Após esse setup, **nada precisa de intervenção** por 4 semanas. O GitHub publica sozinho 3x/semana e renova o token a cada 25 dias.
+
+**Tempo total: ~5 minutos. Executa uma vez só.**
 
 ---
 
-## Passo 1 — Autenticar no GitHub
+## 📋 Pré-requisitos verificados
 
-Cole no PowerShell:
+✅ Git instalado (versão 2.53)
+✅ GitHub CLI instalado (versão 2.93) em `C:\Program Files\GitHub CLI\gh.exe`
+✅ Token Instagram long-lived válido até ~02/08/2026
+✅ 12 posts aprovados em `content/approved/`
+✅ Workflow `.github/workflows/publish.yml` pronto
+✅ Conta GitHub: **VictorRamonOl**
+
+---
+
+## Passo 1 — Autenticar no GitHub CLI
+
+Cola no PowerShell:
 
 ```powershell
 cd "D:\Documents\0. Automações\Insta_Supra"
 & "C:\Program Files\GitHub CLI\gh.exe" auth login
 ```
 
-Responda as perguntas no terminal:
-- **Where do you use GitHub?** → `GitHub.com`
-- **Preferred protocol** → `HTTPS`
-- **Authenticate Git with your GitHub credentials?** → `Y`
-- **How would you like to authenticate?** → `Login with a web browser`
+Responde nas perguntas:
 
-Vai abrir o navegador, fazer login (cria conta se ainda não tem), confirmar o código de 8 dígitos que aparece no terminal, e pronto.
+| Pergunta | Resposta |
+|----------|----------|
+| Where do you use GitHub? | `GitHub.com` (Enter) |
+| Preferred protocol | `HTTPS` (Enter) |
+| Authenticate Git with your GitHub credentials? | `Y` + Enter |
+| How would you like to authenticate? | `Login with a web browser` (Enter) |
+
+Vai aparecer um **código de 8 dígitos** (ex: `ABCD-1234`).
+1. Aperta Enter pra abrir o navegador
+2. Cola o código
+3. Autoriza tudo
+4. Volta no terminal — deve aparecer `✓ Logged in as VictorRamonOl`
 
 ---
 
-## Passo 2 — Criar repo, subir código e configurar segredos (1 comando só)
+## Passo 2 — Criar repo + subir código + configurar segredos
 
-Cola tudo de uma vez no PowerShell:
+**Cola TUDO de uma vez no PowerShell.** Esse bloco faz:
+- Cria repositório privado `supra-instagram-bot`
+- Sobe o código atual
+- Configura os 3 segredos (token, ID, app_secret)
 
 ```powershell
 cd "D:\Documents\0. Automações\Insta_Supra"
 $env:Path += ";C:\Program Files\GitHub CLI"
 
-# Cria repo privado e sobe o codigo
+# Cria repo privado e faz push
 gh repo create supra-instagram-bot --private --source=. --remote=origin --push
 
-# Configura os 3 segredos
+# Le o token do .env local
+$token = (Get-Content .env | Select-String "^INSTAGRAM_ACCESS_TOKEN=" | ForEach-Object { ($_ -split "=", 2)[1] }).Trim()
+
+# Configura os 3 segredos no GitHub
 gh secret set INSTAGRAM_USER_ID --body "17841437968295675"
 gh secret set INSTAGRAM_APP_SECRET --body "781bfe34f29fa3c18a3a0a728c23de32"
-gh secret set INSTAGRAM_ACCESS_TOKEN --body (Get-Content .env | Select-String "INSTAGRAM_ACCESS_TOKEN=" | ForEach-Object { ($_ -split "=", 2)[1] })
+gh secret set INSTAGRAM_ACCESS_TOKEN --body $token
 
-Write-Host "`n>>> Pronto. Repo + segredos configurados." -ForegroundColor Green
+Write-Host "`n>>> Repo criado e segredos configurados!" -ForegroundColor Green
+Write-Host ">>> URL: https://github.com/VictorRamonOl/supra-instagram-bot" -ForegroundColor Cyan
 ```
 
 ---
 
-## Passo 3 — Testar o workflow manualmente
+## Passo 3 — Testar manualmente antes do agendamento
 
 ```powershell
 gh workflow run publish.yml
 ```
 
-Espera ~30 segundos e ve o status:
+Espera 30 segundos. Depois ve o status:
 
 ```powershell
 gh run list --workflow=publish.yml --limit 1
 ```
 
-Pra ver detalhes da execução em andamento:
+Pra acompanhar em tempo real:
 
 ```powershell
 gh run watch
 ```
 
-Se ficar verde ✅ → publicou no @grupo.supraam. Confere o perfil.
-Se ficar vermelho ❌ → me manda o output que eu ajusto.
+**Se ficar verde ✅** → Já publicou o primeiro post (Mobiliário 5 erros) no @grupo.supraam. Confere o perfil. 🎉
+
+**Se ficar vermelho ❌** → Cola o output do `gh run view` aqui no Claude que eu corrijo na hora.
 
 ---
 
-## Próximos posts
+## ⏰ Cronograma automático a partir de agora
 
-A partir daqui, sem precisar fazer nada:
+Após o setup, os 12 posts saem nesta ordem **sem você precisar mexer em nada**:
 
-| Dia | Horário | Post |
-|-----|---------|------|
-| Quarta 03/06 | 13h BR | 01 Mobiliário 5 erros |
-| Sexta 05/06 | 18h BR | 02 Logística interior AM |
-| Segunda 08/06 | 9h BR | 03 PDDE Guia |
-| ... | ... | (e por aí vai os 12) |
-
-Quando a fila esvaziar (após 4 semanas), você me chama no Claude Code que eu produzo o próximo batch.
+| # | Data | Horário (BR) | Post |
+|---|------|--------------|------|
+| 01 | Qua 03/06 | 13h | Mobiliário 5 erros (catálogo) |
+| 02 | Sex 05/06 | 18h | Logística interior AM (regional) |
+| 03 | Seg 08/06 | 9h | PDDE Guia (técnico) |
+| 04 | Qua 10/06 | 13h | Brinquedo 3 perguntas (catálogo) |
+| 05 | Sex 12/06 | 18h | Censo escolar AM (regional) |
+| 06 | Seg 15/06 | 9h | SRM Resolução FNDE (técnico) |
+| 07 | Qua 17/06 | 13h | Lousa Projetor TV (catálogo) |
+| 08 | Sex 19/06 | 18h | SRM subutilizada (regional) |
+| 09 | Seg 22/06 | 9h | Educação Conectada (técnico) |
+| 10 | Qua 24/06 | 13h | Compras públicas 2026 (catálogo) |
+| 11 | Sex 26/06 | 18h | 5 perguntas fornecedor (regional) |
+| 12 | Seg 29/06 | 9h | Cantinho Leitura 70/30 (técnico) |
 
 ---
 
-## Comandos úteis
+## 🔁 Quando a fila esvaziar (depois de 29/06)
+
+Você abre o Claude Code e diz:
+
+> "Produz batch 002 com mais 12 posts seguindo o BRAND_PATTERN.md"
+
+Eu produzo, você revisa (mesmo formato do batch 001), aprova, e o cron continua publicando.
+
+---
+
+## 🛡 Sobre segurança e privacidade
+
+- Repo é **privado** (só você vê)
+- Token guardado nos **GitHub Secrets** (criptografado, não visível em logs)
+- Workflow nunca printa o token em texto puro
+- O `.env` local fica **fora do repo** (protegido pelo `.gitignore`)
+
+---
+
+## ⚠ O que pode pedir intervenção (raro)
+
+| Cenário | Quando | Solução |
+|---------|--------|---------|
+| Token expira (depois de 60 dias) | ~01/08/2026 | Auto-refresh é feito em todo publish. Se falhar, eu gero novo |
+| Fila acaba | Depois de 29/06 | Me chama no Claude pra produzir batch 002 |
+| Erro no GitHub Actions | Raro | Vai te mandar email automaticamente. Manda print do erro |
+
+---
+
+## 📚 Comandos úteis (guarda essa lista)
 
 ```powershell
-# Ver historico de execucoes
+# Adiciona o PATH (necessario em terminal novo)
+$env:Path += ";C:\Program Files\GitHub CLI"
+
+# Ver historico de execucoes do workflow
 gh run list --workflow=publish.yml
 
-# Disparar manualmente fora do agendamento
+# Disparar manualmente (fora do agendamento)
 gh workflow run publish.yml
 
 # Ver logs de uma execucao especifica
 gh run view <ID>
 
-# Cancelar workflow agendado por uma semana (ex: feriado)
+# Pausar publicacoes (ex: feriado, recesso)
 gh workflow disable publish.yml
+
+# Voltar publicacoes
 gh workflow enable publish.yml
+
+# Atualizar token Instagram quando precisar
+gh secret set INSTAGRAM_ACCESS_TOKEN --body "NOVO_TOKEN"
 ```
+
+---
+
+> **Última coisa:** depois do Passo 3 dar verde, você pode fechar o computador. O resto roda na nuvem.
