@@ -140,13 +140,20 @@ def process_post(post: dict, template: str, browser):
         print(f"    -> slide {i}/{total}")
         render_slide_to_png(html_string, out_png, browser)
 
+    caption = post["caption"].rstrip()
+    extra_tags = post.get("hashtags", "").strip()
+    # Evita duplicar hashtags se a caption ja termina com linha de #
+    last_line = caption.split("\n")[-1].strip()
+    if extra_tags and not last_line.startswith("#"):
+        caption = caption + "\n\n" + extra_tags
+
     post_meta = {
         "id": post_id,
         "slug": slug,
         "scheduled_for": post["scheduled_for"],
         "pillar": post["pillar"],
         "format": post["format"],
-        "caption": post["caption"] + "\n\n" + post.get("hashtags", ""),
+        "caption": caption,
         "slides_count": total,
         "status": "pending_review",
     }
