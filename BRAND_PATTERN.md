@@ -6,12 +6,12 @@
 
 ## 1. Identidade Visual
 
-### Paleta de cores
+### Paleta de cores (atualizado 2026-06-02 para casar com supraam.com.br)
 | Cor | Hex | Uso |
 |-----|-----|-----|
-| Navy escuro | `#0d2645` | Background principal |
-| Navy mais escuro | `#061528` | Sombra inferior do gradiente |
-| Navy claro | `#14315a` | Topo do gradiente radial |
+| Navy principal | `#0a2540` | Background principal (deep institutional) |
+| Navy escuro | `#051529` | Sombra inferior do gradiente |
+| Navy lighter | `#0e3357` | Topo do gradiente radial |
 | Dourado principal | `#d4af5a` | Headlines de destaque, numeração, kicker, marca |
 | Dourado suave | `#b8954a` | Variação para detalhes |
 | Creme | `#f4ead5` | Corpo de texto sobre navy |
