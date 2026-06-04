@@ -207,13 +207,16 @@ def build_slides(article: dict, summary: dict) -> list[dict]:
         }
     )
 
-    # Slide 5: CTA blog
+    # Slide 5: CTA blog + newsletter
     slides.append(
         {
             "type": "cta",
-            "headline": "Análise completa no nosso blog",
-            "body": "Acesse supraam.com.br/blog pra ler a análise técnica.\nDúvida específica? Chama no direct.",
-            "footer": "@grupo.supraam · supraam.com.br/blog",
+            "headline": "Quer receber novidades em primeira mão?",
+            "body": (
+                "Análise completa no blog: supraam.com.br/blog\n"
+                "Cadastre-se na nossa newsletter pra receber novidades do FNDE/MEC direto no e-mail."
+            ),
+            "footer": "@grupo.supraam · supraam.com.br",
         }
     )
 
@@ -230,7 +233,8 @@ def build_caption(article: dict, summary: dict, blog_slug: str) -> str:
         f"Novidade FNDE/MEC: {title}\n\n"
         f"{desc_block}"
         f"Fonte: {source}\n"
-        f"Análise completa no nosso blog: supraam.com.br/blog/{blog_slug}\n\n"
+        f"Análise completa no blog: supraam.com.br/blog/{blog_slug}\n"
+        f"Cadastre-se na newsletter em supraam.com.br pra receber novidades como essa no e-mail.\n\n"
         f"Conheça nossos kits em supraam.com.br\n\n"
         f"#FNDE #PDDE #GestaoEscolar #EducacaoAmazonas #NovidadeFNDE #EducacaoNoNorte"
     )
