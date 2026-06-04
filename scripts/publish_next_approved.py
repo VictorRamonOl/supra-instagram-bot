@@ -17,6 +17,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
 APPROVED_DIR = PROJECT_ROOT / "content" / "approved"
+NEWS_QUEUE_DIR = PROJECT_ROOT / "content" / "news_queue"
 LOG_DIR = PROJECT_ROOT / "content" / "_logs"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -33,6 +34,19 @@ def log(msg: str):
 
 
 def find_next_approved() -> Path | None:
+    # 1. Prioridade: news_queue (notícias fura fila)
+    if NEWS_QUEUE_DIR.exists():
+        news = sorted(
+            [
+                d
+                for d in NEWS_QUEUE_DIR.iterdir()
+                if d.is_dir() and (d / "post.json").exists()
+            ]
+        )
+        if news:
+            return news[0]
+
+    # 2. Fila regular de aprovados
     if not APPROVED_DIR.exists():
         return None
     candidates = sorted(

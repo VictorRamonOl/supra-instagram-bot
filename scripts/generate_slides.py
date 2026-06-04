@@ -71,6 +71,26 @@ def render_cta(slide: dict) -> str:
     """
 
 
+def render_news(slide: dict) -> str:
+    label = slide.get("label", "Novidade FNDE/MEC")
+    headline = slide.get("headline", "")
+    summary = slide.get("summary", "")
+    source = slide.get("source", "")
+    date = slide.get("date", "")
+    summary_html = f'<div class="summary">{html.escape(summary)}</div>' if summary else ""
+    source_html = (
+        f'<div class="source">Fonte: {html.escape(source)}'
+        + (f'<span class="date">{html.escape(date)}</span>' if date else "")
+        + "</div>"
+    ) if source else ""
+    return f"""
+    <div class="breaking">{html.escape(label)}</div>
+    <h2>{html.escape(headline)}</h2>
+    {summary_html}
+    {source_html}
+    """
+
+
 def render_program(slide: dict) -> str:
     items_html = "\n".join(f"<li>{html.escape(i)}</li>" for i in slide.get("items", []))
     link = slide.get("link", "supraam.com.br")
@@ -91,6 +111,7 @@ RENDERERS = {
     "comparison": render_comparison,
     "cta": render_cta,
     "program": render_program,
+    "news": render_news,
 }
 
 

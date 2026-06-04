@@ -1,0 +1,81 @@
+name: monitor-news
+
+on:
+  schedule:
+    - cron: '15 * * * *'   # toda hora aos :15min
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Insta_Supra
+        uses: actions/checkout@v4
+
+      - name: Checkout Site_FNDE (sibling repo)
+        uses: actions/checkout@v4
+        with:
+          repository: VictorRamonOl/Site_Fnde
+          path: ../Site_FNDE_repo
+          token: ${{ secrets.GH_REPO_PAT }}
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install deps
+        run: |
+          pip install requests python-dotenv playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Stage Site_FNDE in expected location
+        run: |
+          mkdir -p ../Site_FNDE
+          rm -rf ../Site_FNDE
+          mv ../Site_FNDE_repo ../Site_FNDE
+
+      - name: Run monitor
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python -m scripts.news.monitor --limit 1
+
+      - name: Commit Insta_Supra (state + queue)
+        run: |
+          git config user.name "supra-news-bot"
+          git config user.email "actions@github.com"
+          git add state/ content/news_queue/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Sem novidades pra commitar."
+          else
+            git commit -m "news: monitor $(date -u +%Y-%m-%d_%H%M)"
+            git push
+          fi
+
+      - name: Commit Site_FNDE (blog entry)
+        run: |
+          cd ../Site_FNDE
+          git config user.name "supra-news-bot"
+          git config user.email "actions@github.com"
+          git add src/data/news.ts 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Sem nova entrada de blog."
+          else
+            git commit -m "blog: news auto $(date -u +%Y-%m-%d_%H%M)"
+            git remote set-url origin https://x-access-token:${{ secrets.GH_REPO_PAT }}@github.com/VictorRamonOl/Site_Fnde.git
+            git push origin HEAD
+          fi
+
+      - name: Trigger publish if news queued
+        env:
+          GH_TOKEN: ${{ secrets.GH_REPO_PAT }}
+        run: |
+          if ls content/news_queue/*/post.json 1>/dev/null 2>&1; then
+            echo "Noticias na fila — disparando publish.yml..."
+            gh workflow run publish.yml --repo VictorRamonOl/supra-instagram-bot
+          else
+            echo "Fila vazia — nao dispara publish."
+          fi
