@@ -295,6 +295,154 @@ def render_post_dir(article: dict, summary: dict) -> Path:
     return post_dir
 
 
+def detect_theme(title: str, description: str) -> dict:
+    """Identifica o tema da noticia pra contextualizar o conteudo."""
+    text = (title + " " + description).lower()
+    themes = {
+        "fundeb": {
+            "label": "Fundeb",
+            "what_is": (
+                "O Fundeb é o fundo nacional que financia a educação básica pública no Brasil. "
+                "Os recursos são repassados a estados e municípios com base no número de alunos "
+                "matriculados na rede e na complementação da União."
+            ),
+            "impact": (
+                "Para escolas e secretarias, esse repasse significa fôlego orçamentário para "
+                "manter e melhorar a estrutura: pagamento de pessoal, manutenção do prédio, "
+                "transporte escolar, alimentação e aquisição de materiais didáticos e mobiliário."
+            ),
+            "action": [
+                "Consulte o portal do FNDE para confirmar o valor que sua escola/município recebe",
+                "Revise o plano de aplicação à luz do novo repasse",
+                "Atualize o inventário de bens permanentes",
+                "Planeje aquisições já com descrição técnica padronizada pra prestação de contas",
+            ],
+        },
+        "pdde": {
+            "label": "PDDE",
+            "what_is": (
+                "O Programa Dinheiro Direto na Escola (PDDE) é o recurso federal repassado "
+                "diretamente à Unidade Executora (UEx) de cada escola pública. Ele cobre "
+                "manutenção, conservação e pequenos investimentos. Existem 3 modalidades: "
+                "Básico, Equidade e Qualidade — cada uma com regras próprias na Resolução vigente do FNDE."
+            ),
+            "impact": (
+                "Toda escola que recebe PDDE precisa aplicar respeitando a divisão entre "
+                "custeio e capital (Portaria 448/2002) e as vedações da Resolução. Errar a "
+                "classificação ou comprar item vedado pode resultar em glosa e devolução do recurso."
+            ),
+            "action": [
+                "Revise o saldo do PDDE no PDDE Web antes de planejar compras",
+                "Consulte a Resolução CD/FNDE em vigor para ver o que pode/não pode comprar",
+                "Antes de fechar orçamento, confirme se cada item está na rubrica correta",
+                "Documente NF, recibo e termo de doação por exercício",
+            ],
+        },
+        "srm": {
+            "label": "Sala de Recursos / Inclusão",
+            "what_is": (
+                "A Sala de Recursos Multifuncionais (SRM) é o espaço de Atendimento Educacional "
+                "Especializado (AEE) obrigatório em escolas com matrículas elegíveis. Recebe "
+                "equipamentos de informática, tecnologia assistiva e mobiliário ergonômico."
+            ),
+            "impact": (
+                "Implantar SRM exige checklist obrigatório de equipamentos e mobiliário, com "
+                "laudos técnicos por item. Sem cumprir a Resolução, a prestação de contas é glosada."
+            ),
+            "action": [
+                "Confirme se a SRM tem todos os itens previstos no Tipo 1 ou Tipo 2",
+                "Verifique manutenção dos equipamentos e adequação do mobiliário",
+                "Documente o uso pedagógico com plano de AEE assinado pelo conselho",
+                "Capacite a equipe para o atendimento especializado",
+            ],
+        },
+        "default": {
+            "label": "FNDE/MEC",
+            "what_is": (
+                "O Ministério da Educação e o FNDE publicam regularmente normativas, repasses "
+                "e programas que impactam a rotina das escolas e Unidades Executoras. Estar "
+                "atento a essas publicações é parte essencial da gestão escolar."
+            ),
+            "impact": (
+                "Cada nova publicação pode alterar prazos, regras de aplicação ou rubricas "
+                "elegíveis. Vale revisar seu plano à luz da novidade antes de seguir com compras "
+                "ou prestação de contas."
+            ),
+            "action": [
+                "Acompanhe o portal oficial do FNDE para confirmar a publicação",
+                "Verifique se sua escola está enquadrada no que mudou",
+                "Atualize procedimentos internos se necessário",
+                "Procure orientação técnica se tiver dúvidas",
+            ],
+        },
+    }
+    if "fundeb" in text:
+        return themes["fundeb"]
+    if "pdde" in text:
+        return themes["pdde"]
+    if "srm" in text or "sala de recursos" in text or "inclusão" in text or "aee" in text:
+        return themes["srm"]
+    return themes["default"]
+
+
+def build_blog_content(title: str, description: str, theme: dict, quote_block: dict) -> list:
+    """Monta o array de blocos do blog post — conteudo substancial + CTA."""
+    blocks = []
+
+    # Resumo (callout no topo)
+    blocks.append({
+        "kind": "callout",
+        "tone": "info",
+        "title": "Resumo",
+        "text": description or f"Publicação oficial referente a {theme['label']}. Confira a análise abaixo.",
+    })
+
+    # Seção 1: contexto
+    blocks.append({"kind": "h2", "text": f"O que é {theme['label']} e por que essa notícia importa"})
+    blocks.append({"kind": "p", "text": theme["what_is"]})
+    blocks.append({"kind": "p", "text": theme["impact"]})
+
+    # Citação da notícia
+    blocks.append(quote_block)
+
+    # Seção 2: como agir (checklist)
+    blocks.append({"kind": "h2", "text": "Como agir agora"})
+    blocks.append({
+        "kind": "p",
+        "text": "Esses são os passos práticos que sugerimos pra gestores escolares e UEx diante desse tipo de publicação:",
+    })
+    blocks.append({
+        "kind": "checklist",
+        "items": [{"ok": False, "text": item} for item in theme["action"]],
+    })
+
+    # Seção 3: como a Supra ajuda
+    blocks.append({"kind": "h2", "text": "Como a Supra AM pode te apoiar"})
+    blocks.append({
+        "kind": "p",
+        "text": (
+            "Trabalhamos há anos com escolas e Unidades Executoras do Norte do Brasil. Cada "
+            "orçamento que entregamos vem com enquadramento FNDE já correto, descrição técnica "
+            "padronizada na nota fiscal e logística calculada pra realidade do interior. "
+            "Você ganha tempo e elimina o risco de glosa na prestação de contas."
+        ),
+    })
+
+    # CTA final — botão pra orçamento
+    blocks.append({
+        "kind": "cta",
+        "title": "Quer apoio técnico pra aplicar bem esse recurso?",
+        "text": (
+            "Solicite um orçamento técnico com a Supra AM. Avaliamos sua demanda, sugerimos os "
+            "kits adequados pra sua escola e entregamos com documentação pronta pra prestação de contas."
+        ),
+        "buttonLabel": "Solicitar orçamento",
+        "buttonHref": "/orcamento",
+    })
+
+    return blocks
+
+
 def append_blog_entry(article: dict, summary: dict, post_dir: Path):
     """Anexa entrada em Site_FNDE/src/data/news.ts (se Site_FNDE existir)."""
     if not SITE_FNDE_ROOT.exists():
@@ -313,23 +461,20 @@ def append_blog_entry(article: dict, summary: dict, post_dir: Path):
     if has_real_url:
         quote_block["sourceLink"] = source_url
 
+    theme = detect_theme(title, description)
+    content_blocks = build_blog_content(title, description, theme, quote_block)
+
     entry = {
         "slug": slug,
         "tag": "Novidade FNDE",
         "date": today_br,
         "title": title,
-        "excerpt": description or "Acompanhamento institucional do FNDE/MEC pela equipe Supra AM.",
-        "readingTime": "3 min",
+        "excerpt": description or f"Novidade {theme['label']}: acompanhamento institucional pela equipe Supra AM.",
+        "readingTime": "4 min",
         "authorName": "Equipe Supra AM",
         "authorRole": "Monitoramento FNDE/MEC",
         "heroImage": "/blog/como-funciona-pdde-2026.jpg",
-        "content": [
-            {"kind": "callout", "tone": "info", "title": "Resumo",
-             "text": description or "Publicação oficial do FNDE/MEC. Confira a fonte abaixo."},
-            {"kind": "p", "text": "Esse acompanhamento é parte do monitoramento contínuo da equipe Supra AM sobre publicações do FNDE e do Ministério da Educação."},
-            quote_block,
-            {"kind": "p", "text": "Quer entender o impacto pra sua escola? Acesse supraam.com.br ou chame nossa equipe no direct do Instagram."},
-        ],
+        "content": content_blocks,
     }
     _gen_at = datetime.now(timezone.utc).isoformat()
 
