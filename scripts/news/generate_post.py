@@ -10,6 +10,7 @@ Template (sem IA): hook + manchete + resumo + impacto + CTA blog.
 """
 import html as html_mod
 import json
+import os
 import re
 import sys
 import unicodedata
@@ -33,7 +34,11 @@ def clean_text(s: str) -> str:
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 NEWS_QUEUE = PROJECT_ROOT / "content" / "news_queue"
 TEMPLATE_FILE = PROJECT_ROOT / "scripts" / "templates" / "slide_template.html"
-SITE_FNDE_ROOT = PROJECT_ROOT.parent / "Site_FNDE"
+# SITE_FNDE_PATH pode ser sobrescrito via env var (usado no GitHub Actions)
+_site_override = os.environ.get("SITE_FNDE_PATH")
+SITE_FNDE_ROOT = (
+    Path(_site_override) if _site_override else PROJECT_ROOT.parent / "Site_FNDE"
+)
 SITE_NEWS_FILE = SITE_FNDE_ROOT / "src" / "data" / "news.ts"
 
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))

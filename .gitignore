@@ -26,3 +26,6 @@ content/_feed_preview.html
 # Sistema
 Thumbs.db
 .DS_Store
+
+# Sibling repos checked out durante GH Actions (nunca commitar)
+_external/

@@ -32,16 +32,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: VictorRamonOl/Site_Fnde
-          path: ../Site_FNDE_repo
+          path: _external/Site_FNDE
           token: ${{ secrets.GH_REPO_PAT }}
           fetch-depth: 1
-
-      - name: Stage Site_FNDE em local esperado
-        if: steps.pat_check.outputs.has_pat == 'true'
-        run: |
-          mkdir -p ../Site_FNDE
-          rm -rf ../Site_FNDE
-          mv ../Site_FNDE_repo ../Site_FNDE
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -56,6 +49,7 @@ jobs:
       - name: Run monitor
         env:
           PYTHONIOENCODING: utf-8
+          SITE_FNDE_PATH: ${{ github.workspace }}/_external/Site_FNDE
         run: python -m scripts.news.monitor --limit 1
 
       - name: Commit Insta_Supra (state + queue)
@@ -73,7 +67,7 @@ jobs:
       - name: Commit Site_FNDE (blog entry, se PAT)
         if: steps.pat_check.outputs.has_pat == 'true'
         run: |
-          cd ../Site_FNDE
+          cd _external/Site_FNDE
           git config user.name "supra-news-bot"
           git config user.email "actions@github.com"
           git add src/data/news.ts 2>/dev/null || true
