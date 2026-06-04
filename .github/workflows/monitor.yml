@@ -14,13 +14,34 @@ jobs:
       - name: Checkout Insta_Supra
         uses: actions/checkout@v4
 
-      - name: Checkout Site_FNDE (sibling repo)
+      - name: Check if PAT is configured
+        id: pat_check
+        env:
+          PAT: ${{ secrets.GH_REPO_PAT }}
+        run: |
+          if [ -n "$PAT" ]; then
+            echo "has_pat=true" >> $GITHUB_OUTPUT
+            echo "[info] GH_REPO_PAT configurado — features completas habilitadas."
+          else
+            echo "has_pat=false" >> $GITHUB_OUTPUT
+            echo "[info] GH_REPO_PAT ausente — vai rodar parcial (sem sync de blog nem auto-trigger publish)."
+          fi
+
+      - name: Checkout Site_FNDE (se PAT existe)
+        if: steps.pat_check.outputs.has_pat == 'true'
         uses: actions/checkout@v4
         with:
           repository: VictorRamonOl/Site_Fnde
           path: ../Site_FNDE_repo
           token: ${{ secrets.GH_REPO_PAT }}
           fetch-depth: 1
+
+      - name: Stage Site_FNDE em local esperado
+        if: steps.pat_check.outputs.has_pat == 'true'
+        run: |
+          mkdir -p ../Site_FNDE
+          rm -rf ../Site_FNDE
+          mv ../Site_FNDE_repo ../Site_FNDE
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -31,12 +52,6 @@ jobs:
         run: |
           pip install requests python-dotenv playwright
           python -m playwright install --with-deps chromium
-
-      - name: Stage Site_FNDE in expected location
-        run: |
-          mkdir -p ../Site_FNDE
-          rm -rf ../Site_FNDE
-          mv ../Site_FNDE_repo ../Site_FNDE
 
       - name: Run monitor
         env:
@@ -55,7 +70,8 @@ jobs:
             git push
           fi
 
-      - name: Commit Site_FNDE (blog entry)
+      - name: Commit Site_FNDE (blog entry, se PAT)
+        if: steps.pat_check.outputs.has_pat == 'true'
         run: |
           cd ../Site_FNDE
           git config user.name "supra-news-bot"
@@ -69,7 +85,8 @@ jobs:
             git push origin HEAD
           fi
 
-      - name: Trigger publish if news queued
+      - name: Trigger publish (se PAT e fila tem item)
+        if: steps.pat_check.outputs.has_pat == 'true'
         env:
           GH_TOKEN: ${{ secrets.GH_REPO_PAT }}
         run: |
@@ -79,3 +96,9 @@ jobs:
           else
             echo "Fila vazia — nao dispara publish."
           fi
+
+      - name: Aviso final se sem PAT
+        if: steps.pat_check.outputs.has_pat == 'false'
+        run: |
+          echo "::warning::Configure GH_REPO_PAT para habilitar sync com Site_FNDE e auto-disparo do publish.yml."
+          echo "Por enquanto, noticias detectadas ficam em content/news_queue/ e publicam no proximo Mon/Wed/Fri."
