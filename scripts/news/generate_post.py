@@ -322,7 +322,7 @@ def append_blog_entry(article: dict, summary: dict, post_dir: Path):
         "readingTime": "3 min",
         "authorName": "Equipe Supra AM",
         "authorRole": "Monitoramento FNDE/MEC",
-        "heroImage": "/blog/news-default.png",
+        "heroImage": "/blog/como-funciona-pdde-2026.jpg",
         "content": [
             {"kind": "callout", "tone": "info", "title": "Resumo",
              "text": description or "Publicação oficial do FNDE/MEC. Confira a fonte abaixo."},
