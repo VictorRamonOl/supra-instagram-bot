@@ -167,6 +167,29 @@ def _domain(url: str) -> str:
         return url
 
 
+def _signature(title: str, desc: str) -> str | None:
+    """Gera assinatura unica para deduplicar a mesma noticia em fontes diferentes.
+
+    Usa o primeiro valor R$ + tipo (bilh/milh) + tema (fundeb/pdde/etc).
+    Ex: 'r$4,8bilh/fundeb' identifica essa noticia independente da fonte.
+    """
+    text = (title + " " + desc).lower()
+    # extrai R$ X,Y bilhao/milhao
+    m = re.search(
+        r"r\$\s*([\d,\.]+)\s*(bilh\w+|milh\w+)",
+        text,
+    )
+    if not m:
+        return None
+    valor = m.group(1).replace(".", "").replace(",", ".")
+    unidade = "bilh" if "bilh" in m.group(2) else "milh"
+    # detecta o tema (fundeb, pdde, salario-educacao, etc.)
+    temas = ("fundeb", "pdde", "fnde", "salário-educação", "salario-educacao",
+             "educacao conectada", "educacao basica", "merenda")
+    tema = next((t for t in temas if t.replace("-", " ") in text or t in text), "geral")
+    return f"r${valor}{unidade}/{tema}"
+
+
 def _resolve_redirect(link: str) -> str:
     """Google News usa link redirect com JS. Best-effort fallback."""
     try:
@@ -242,6 +265,10 @@ def find_new_articles(limit: int = None) -> list[dict]:
     seen = load_seen()
     new = []
     seen_keys = set(seen.keys())
+    seen_signatures = {
+        v.get("signature") for v in seen.values() if isinstance(v, dict) and v.get("signature")
+    }
+    new_signatures_this_run = set()  # evita duplicar dentro da mesma execucao
     all_items = []
     for q in QUERIES:
         all_items.extend(fetch_google_news_rss(q))
@@ -288,13 +315,29 @@ def find_new_articles(limit: int = None) -> list[dict]:
         article_key = item["link"]
         if article_key in seen_keys:
             continue
+
+        # Dedup semantico: mesma noticia em fontes diferentes
+        sig = _signature(item["title"], item.get("description", ""))
+        if sig and (sig in seen_signatures or sig in new_signatures_this_run):
+            # Marca como visto pra nao reaparecer, mas nao gera post
+            seen[article_key] = {
+                "title": item["title"],
+                "found_at": datetime.now(timezone.utc).isoformat(),
+                "source": item.get("source_name", ""),
+                "skipped_duplicate_of_signature": sig,
+            }
+            continue
+
         item["resolved_link"] = _resolve_redirect(item["link"])
         new.append(item)
         seen[article_key] = {
             "title": item["title"],
             "found_at": datetime.now(timezone.utc).isoformat(),
             "source": item.get("source_name") or _domain(item["resolved_link"]),
+            "signature": sig,
         }
+        if sig:
+            new_signatures_this_run.add(sig)
         if limit and len(new) >= limit:
             break
 
