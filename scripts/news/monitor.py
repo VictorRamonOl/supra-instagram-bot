@@ -26,6 +26,8 @@ QUERIES = [
     "FNDE PDDE repasse escolas",
     "FNDE PDDE Equidade Qualidade Resolução",
     "Ministério Educação recurso transferência escola",
+    "MEC repassa bilhões Fundeb educação básica",
+    "Fundeb repasse estados municípios",
     "Educação Conectada PDDE Conectividade",
     "Sala Recursos Multifuncionais SRM AEE inclusão",
     "Censo escolar Amazonas educação básica",
@@ -33,25 +35,50 @@ QUERIES = [
     "Cantinho da Leitura PDDE FNDE",
     "Compras públicas educação licitação",
     "Mais Educação Tempo Integral FNDE",
+    "Salário-educação repasse municípios",
 ]
 
 # Domains confiaveis (whitelist forte)
 TRUSTED_DOMAINS = (
+    # Oficiais
     ".gov.br",
     "fnde.gov.br",
     "mec.gov.br",
     "in.gov.br",
+    # Agencias publicas
     "agenciabrasil.ebc.com.br",
     "agenciagov.ebc.com.br",
+    # Grandes midias
     "g1.globo.com",
     "valor.globo.com",
-    "globo.com/educacao",
+    "globo.com",
     "folha.uol.com.br",
     "estadao.com.br",
     "oglobo.globo.com",
-    "uol.com.br/educacao",
-    "cnnbrasil.com.br/educacao",
+    "uol.com.br",
+    "cnnbrasil.com.br",
     "exame.com",
+    "veja.abril.com.br",
+    "metropoles.com",
+    "noticias.r7.com",
+    "r7.com",
+    "jovempan.com.br",
+    "brasil61.com",
+    # Pacotes/agregadores B2G educacao (medias mas com cobertura forte)
+    "radardigitalbrasilia",
+    "conexao",
+    "diariodopoder",
+    "revistaoeste",
+)
+
+# Notícias mais antigas que isso são ignoradas (mantém o feed sempre fresco)
+MAX_AGE_DAYS = 7
+
+# Palavras de impacto que dão "boost" pra noticia (sao publicadas mesmo se source for menos famoso)
+IMPACT_KEYWORDS = (
+    "repasse", "repassa", "libera", "anuncia", "anunciou",
+    "bilhão", "bilhões", "milhão", "milhões",
+    "r$", "fundeb", "salário-educação", "transferência",
 )
 
 # Palavras-chave que indicam noticia relevante (precisa ter pelo menos 1)
@@ -176,6 +203,28 @@ def is_relevant(title: str, description: str) -> bool:
     return any(k in text for k in RELEVANCE_KEYWORDS)
 
 
+def has_impact(title: str, description: str) -> bool:
+    text = (title + " " + description).lower()
+    return any(k in text for k in IMPACT_KEYWORDS)
+
+
+def is_recent(pub_date_str: str) -> bool:
+    """True se noticia foi publicada nos ultimos MAX_AGE_DAYS dias."""
+    if not pub_date_str:
+        return False
+    from datetime import datetime, timezone, timedelta
+    for fmt in ("%a, %d %b %Y %H:%M:%S %Z", "%a, %d %b %Y %H:%M:%S %z"):
+        try:
+            dt = datetime.strptime(pub_date_str, fmt)
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
+            return dt >= cutoff
+        except ValueError:
+            continue
+    return False
+
+
 def load_seen() -> dict:
     if not STATE_FILE.exists():
         return {}
@@ -204,28 +253,48 @@ def find_new_articles(limit: int = None) -> list[dict]:
         if key not in by_title:
             by_title[key] = item
 
+    # Score + filtro
+    scored = []
     for item in by_title.values():
-        # Filtra antes de resolver (mais rapido)
-        if not is_trusted(item):
+        title = item["title"]
+        desc = item.get("description", "")
+        pub = item.get("pub_date", "")
+
+        if not is_recent(pub):
             continue
-        if not is_relevant(item["title"], item.get("description", "")):
+        if not is_relevant(title, desc):
             continue
 
-        # Dedup pela URL do Google News (estavel)
+        impact = has_impact(title, desc)
+        trusted = is_trusted(item)
+
+        # Regras de admissão:
+        # - se fonte confiável: aceita sempre
+        # - se fonte secundária mas com impacto (R$, repasse, bilhões): aceita
+        # - caso contrário: descarta
+        if not (trusted or impact):
+            continue
+
+        # Score: impact (+2) + trusted (+1) — usado pra ordenar
+        score = (2 if impact else 0) + (1 if trusted else 0)
+        # Sort secundário: data mais nova primeiro
+        scored.append((score, pub, item))
+
+    # Ordena por score desc, depois data desc
+    scored.sort(key=lambda x: (-x[0], x[1]), reverse=False)
+    scored.sort(key=lambda x: x[0], reverse=True)
+
+    for _, _, item in scored:
         article_key = item["link"]
         if article_key in seen_keys:
             continue
-
-        # Resolve apenas dos que vamos processar
         item["resolved_link"] = _resolve_redirect(item["link"])
-
         new.append(item)
         seen[article_key] = {
             "title": item["title"],
             "found_at": datetime.now(timezone.utc).isoformat(),
             "source": item.get("source_name") or _domain(item["resolved_link"]),
         }
-
         if limit and len(new) >= limit:
             break
 
