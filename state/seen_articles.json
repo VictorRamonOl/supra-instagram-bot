@@ -44,5 +44,17 @@
     "found_at": "2026-06-04T17:23:12.753064+00:00",
     "source": "GOV.BR",
     "signature": null
+  },
+  "https://news.google.com/rss/articles/CBMioAFBVV95cUxOM3JXUURZV0taczVmRWtCcjM0dDh6dWtGS1FTem1hc09kc1BtX0FsRm0zZXNsbjlNRmh2b1pqRTVVeE5IYmNhWlR1U0w1OGNFekRrNEF2OVNxSlZnSG1US1l3WnYzMWRicVdsbHE0VlotNUtsY3BKUFhmNVp4bWFScER1WXoxQ1FhaGVxbi0weTdYOEVEWkNLdFNNbjNUNTRR?oc=5": {
+    "title": "MEC repassa R$ 4,8 bilhões do Fundeb para estados e municípios - notícia infoco",
+    "found_at": "2026-06-04T20:24:47.414252+00:00",
+    "source": "notícia infoco",
+    "skipped_duplicate_of_signature": "r$4.8bilh/fundeb"
+  },
+  "https://news.google.com/rss/articles/CBMitAFBVV95cUxNdWlDQ1psYWFMcXFnaHBqS0ptamhFeXJybk1aM3ROMHQyZXVzaktxUkhUZV9xczhVc0FfMEI0N3VPYm9XRUhid05LaWQ0aTJHUUNubllpY3pHb3NWQktVRml5WHdKaWpidk4zR0czOXhpSncwYWhGYkxJUWkyeGhzSzVVZEhvanVLWG1BQzNhcWNORkZFSlBzbVhIczBheUdMV0RjcFhfNTVnLUNaWnVPeVVXN2g?oc=5": {
+    "title": "PDDE Equidade: prazo de adesão é ampliado até 10 de junho — Ministério da Educação - GOV.BR",
+    "found_at": "2026-06-04T20:24:47.619904+00:00",
+    "source": "GOV.BR",
+    "signature": null
   }
 }
