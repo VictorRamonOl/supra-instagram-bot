@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+  :root {
+    --navy: #0a2540;
+    --navy-dark: #051529;
+    --gold: #d4af5a;
+    --gold-soft: #b8954a;
+    --cream: #f4ead5;
+    --white: #ffffff;
+  }
+
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: radial-gradient(ellipse at top, #0e3357 0%, var(--navy) 55%, var(--navy-dark) 100%);
+    font-family: 'Inter', sans-serif;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Top bar gold */
+  .top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 14px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-soft) 100%);
+  }
+
+  /* Brand watermark - top right */
+  .brand {
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+  }
+  .brand-logo {
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--gold);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--gold);
+    background: rgba(255,255,255,0.04);
+  }
+  .brand-text {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+  }
+  .brand-text small {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+    color: var(--cream);
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+
+  /* Bottom CTA */
+  .cta {
+    position: absolute;
+    bottom: 100px;
+    left: 80px;
+    right: 80px;
+    text-align: center;
+    z-index: 10;
+  }
+  .cta .handle {
+    display: inline-block;
+    padding: 24px 56px;
+    background: var(--gold);
+    color: var(--navy-dark);
+    border-radius: 8px;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+  .cta .sub {
+    margin-top: 28px;
+    font-size: 24px;
+    color: var(--cream);
+    opacity: 0.85;
+  }
+
+  /* Main content - centered vertically */
+  .content {
+    padding: 280px 100px 320px 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+  }
+
+  /* === DICA Story === */
+  .story-dica .kicker {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    display: inline-block;
+    padding: 14px 28px;
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    align-self: flex-start;
+  }
+  .story-dica h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 110px;
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 50px;
+    color: var(--white);
+  }
+  .story-dica .body {
+    font-size: 44px;
+    line-height: 1.45;
+    font-weight: 400;
+    color: var(--cream);
+  }
+
+  /* === DADO Story (numero grande) === */
+  .story-dado .label {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .story-dado .numero {
+    font-family: 'Playfair Display', serif;
+    font-size: 240px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--gold);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .story-dado .descricao {
+    font-size: 42px;
+    line-height: 1.4;
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .story-dado .fonte {
+    font-size: 22px;
+    color: var(--cream);
+    opacity: 0.7;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+
+  /* === QUOTE Story === */
+  .story-quote .marks {
+    font-family: 'Playfair Display', serif;
+    font-size: 200px;
+    color: var(--gold);
+    line-height: 0.8;
+    margin-bottom: 20px;
+    opacity: 0.5;
+  }
+  .story-quote .frase {
+    font-family: 'Playfair Display', serif;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 40px;
+  }
+  .story-quote .autor {
+    font-size: 28px;
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 1.5px;
+  }
+
+  /* === PERGUNTA Story (sem stickers, simula) === */
+  .story-pergunta .label {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  .story-pergunta h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 60px;
+  }
+  .story-pergunta .opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .story-pergunta .opcao {
+    padding: 30px 40px;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    font-size: 38px;
+    font-weight: 500;
+    color: var(--cream);
+  }
+  .story-pergunta .responde {
+    margin-top: 40px;
+    font-size: 28px;
+    color: var(--gold);
+    text-align: center;
+  }
+
+  /* Decorative ornaments */
+  .ornament {
+    position: absolute;
+    bottom: -300px;
+    right: -300px;
+    width: 900px;
+    height: 900px;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    opacity: 0.05;
+    z-index: 1;
+  }
+</style>
+</head>
+<body class="story-{{TYPE}}">
+  <div class="top-bar"></div>
+  <div class="ornament"></div>
+
+  <div class="brand">
+    <div class="brand-logo">SA</div>
+    <div class="brand-text">SUPRA AM<small>SOLUÇÕES INTEGRADAS</small></div>
+  </div>
+
+  <div class="content">
+    {{CONTENT_HTML}}
+  </div>
+
+  <div class="cta">
+    <div class="handle">@grupo.supraam</div>
+    <div class="sub">supraam.com.br</div>
+  </div>
+</body>
+</html>

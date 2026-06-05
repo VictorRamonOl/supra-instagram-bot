@@ -1,0 +1,58 @@
+name: publish-story
+
+on:
+  schedule:
+    - cron: '0 12 * * *'   # Todo dia 12h UTC = 9h BR
+  workflow_dispatch:
+
+jobs:
+  story:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install deps
+        run: |
+          pip install requests python-dotenv playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Create .env from secrets
+        env:
+          IG_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          IG_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          IG_SECRET: ${{ secrets.INSTAGRAM_APP_SECRET }}
+        run: |
+          cat > .env <<EOF
+          INSTAGRAM_USER_ID=$IG_USER_ID
+          INSTAGRAM_ACCESS_TOKEN=$IG_TOKEN
+          INSTAGRAM_APP_SECRET=$IG_SECRET
+          INSTAGRAM_TOKEN_REFRESHED_AT=2026-06-03
+          META_API_VERSION=v23.0
+          INSTAGRAM_HANDLE=grupo.supraam
+          EOF
+
+      - name: Generate + Publish Story
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python -m scripts.stories.publish_story
+
+      - name: Commit state (published_stories.json + queue)
+        run: |
+          git config user.name "supra-story-bot"
+          git config user.email "actions@github.com"
+          rm -f .env
+          git add state/ content/stories_queue/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Sem mudancas pra commitar."
+          else
+            git commit -m "story: publicacao $(date -u +%Y-%m-%d_%H%M)"
+            git push
+          fi

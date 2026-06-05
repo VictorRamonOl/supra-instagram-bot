@@ -281,11 +281,9 @@ def find_new_articles(limit: int = None) -> list[dict]:
     published_last_7d = sum(1 for d in published_history if d >= week_ago)
     published_last_48h = sum(1 for d in published_history if d >= last_pub_within_48h)
 
-    if published_last_7d >= 2:
-        print(f"[hard-cap] Ja foram publicadas 2 noticias nos ultimos 7 dias. Pulando.")
-        return []
-    if published_last_48h >= 1:
-        print(f"[hard-cap] Ja foi publicada noticia nas ultimas 48h. Aguardando spacing.")
+    # Novo equilibrio editorial: maximo 1 noticia/semana (deixar espaco pra carrosseis kit+info)
+    if published_last_7d >= 1:
+        print(f"[hard-cap] Ja foi publicada 1 noticia nos ultimos 7 dias. Pulando.")
         return []
 
     new = []
