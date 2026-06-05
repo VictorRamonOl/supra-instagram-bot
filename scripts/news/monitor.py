@@ -264,17 +264,28 @@ def save_seen(seen: dict):
 def find_new_articles(limit: int = None) -> list[dict]:
     seen = load_seen()
 
-    # HARD CAP: max 1 noticia publicada por dia (anti-spam algoritmico)
+    # HARD CAP: max 2 noticias publicadas por SEMANA + min 48h entre uma e outra
+    # (anti-spam: noticias frequentes demais sinalizam bot algoritmico)
     from datetime import datetime, timezone, timedelta
-    today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    published_today = sum(
-        1 for v in seen.values()
+    now_utc = datetime.now(timezone.utc)
+    week_ago = (now_utc - timedelta(days=7)).isoformat()
+    last_pub_within_48h = (now_utc - timedelta(hours=48)).isoformat()
+
+    published_history = [
+        v.get("found_at", "")
+        for v in seen.values()
         if isinstance(v, dict)
         and not v.get("skipped_duplicate_of_signature")
-        and v.get("found_at", "").startswith(today_utc)
-    )
-    if published_today >= 1:
-        print(f"[hard-cap] Ja foi publicada 1 noticia hoje ({today_utc}). Pulando.")
+        and v.get("found_at", "")
+    ]
+    published_last_7d = sum(1 for d in published_history if d >= week_ago)
+    published_last_48h = sum(1 for d in published_history if d >= last_pub_within_48h)
+
+    if published_last_7d >= 2:
+        print(f"[hard-cap] Ja foram publicadas 2 noticias nos ultimos 7 dias. Pulando.")
+        return []
+    if published_last_48h >= 1:
+        print(f"[hard-cap] Ja foi publicada noticia nas ultimas 48h. Aguardando spacing.")
         return []
 
     new = []
