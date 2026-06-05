@@ -1,0 +1,234 @@
+{
+  "batch_id": "002",
+  "created": "2026-06-05",
+  "strategy": "conversion_focused — pergunta-dor + dado MEC + tutorial/kit + ponte de venda + CTA /orcamento",
+  "cadence": "Seg tutorial · Qua evergreen (fallback news) · Sex kit",
+  "posts": [
+    {
+      "id": "01",
+      "slug": "prestar-contas-pdde-sem-rejeicao",
+      "scheduled_for": "2026-06-09",
+      "pillar": "tutorial",
+      "format": "carousel",
+      "caption": "Sua escola já teve a prestação de contas do PDDE REJEITADA — com obrigação de devolver o dinheiro ao governo?\n\n36,8% dos diretores relataram interrupções no processo PDDE por dúvidas (MEC, 2026). Você não está sozinho — mas isso tem solução.\n\nNesse carrossel: 7 passos pra prestar contas sem rejeição, baseado na Resolução do FNDE em vigor.\n\nSalva esse post antes da próxima prestação e marca um diretor que precisa ver.\n\n#PDDE #FNDE #PrestacaoDeContas #GestaoEscolar #EducacaoAmazonas",
+      "slides": [
+        {"type": "hook", "headline": "Prestação rejeitada?", "subheadline": "7 passos pra acabar com isso de uma vez", "footer": "Carrossel — Supra AM"},
+        {"type": "data", "kicker": "DADO REAL", "headline": "1 em cada 3 diretores tem essa dor", "items": ["36,8% relataram interrupções no PDDE por dúvidas (MEC 2026)", "27,7% buscaram ajuda por telefone ou e-mail", "Rejeição = devolução do dinheiro ao Tesouro", "Erro mais comum: descrição genérica na NF"]},
+        {"type": "content", "kicker": "PASSO 1", "headline": "Descrição técnica padronizada na NF", "body": "Nada de \"cadeira escolar\". Tem que ser \"cadeira universitária, altura ajustável, encosto anatômico, com prancheta, certificação INMETRO\".\n\nA NF padronizada protege a prestação."},
+        {"type": "content", "kicker": "PASSO 2", "headline": "Custeio e capital separados", "body": "Portaria 448/2002 não admite mistura.\n\nCusteio: papel A4, manutenção.\nCapital: cadeira, lousa, mobiliário.\n\nMisturar = devolução do recurso. Sem chance de revisão."},
+        {"type": "content", "kicker": "PASSO 3", "headline": "Documentação completa por exercício", "body": "Pra cada compra: NF + recibo + termo de doação (se aplicável) + extrato bancário.\n\nGuarde organizado por ano. O SIGPC pede.\n\nDocumento perdido = rejeição garantida."},
+        {"type": "data", "kicker": "PASSO 4-7", "headline": "Os 4 erros que mais derrubam prestação", "items": ["Comprar item vedado (uniforme, festa, construção)", "NF emitida em nome do diretor pessoa física", "CNPJ do fornecedor com pendência fiscal", "Saldo reprogramado não declarado no formulário"]},
+        {"type": "program", "headline": "Cansou de prestar contas sozinho?", "desc": "A Supra AM entrega seu kit com TUDO pronto pra prestação. Você só anexa.", "items": ["NF já no padrão técnico FNDE", "Descrição padronizada por rubrica", "Documentação completa (NF + recibo + termo)", "Plano de aplicação sugerido com base na Resolução vigente"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Pede seu orçamento técnico em 3 dias úteis", "body": "Acesse supraam.com.br/orcamento.\nDescreva sua necessidade.\nA gente devolve orçamento já enquadrado.\nFoco em zero rejeição na prestação.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#PDDE #FNDE #PrestacaoDeContas #GestaoEscolar #EducacaoAmazonas #ComprasPublicas"
+    },
+    {
+      "id": "02",
+      "slug": "vedacoes-pdde-7-itens",
+      "scheduled_for": "2026-06-11",
+      "pillar": "evergreen",
+      "format": "carousel",
+      "caption": "7 itens que parecem ok pra comprar com PDDE — mas NÃO são. E uma só leva a escola pra rejeição total.\n\nSe sua escola já caiu em algum, salva esse post e marca o conselho da UEx.\n\nDúvida específica sobre um item? Comenta o número do slide.\n\n#PDDE #FNDE #VedacoesPDDE #GestaoEscolar #ComprasPublicas",
+      "slides": [
+        {"type": "hook", "headline": "7 vedações do PDDE", "subheadline": "Que muito gestor erra (e perde recurso)", "footer": "Carrossel — Supra AM"},
+        {"type": "data", "kicker": "1-4 / FIXOS", "headline": "Não pode em hipótese alguma", "items": ["Uniformes escolares", "Festividades e premiações (formaturas, etc.)", "Construção ou reforma estrutural", "Câmeras de vigilância"]},
+        {"type": "data", "kicker": "5-7 / FREQUENTES", "headline": "E esses também não", "items": ["Aluguel de imóvel ou veículo de longo prazo", "Combustível pra transporte escolar", "Pagamento de pessoal (folha)"]},
+        {"type": "content", "kicker": "POR QUÊ", "headline": "A regra existe pra proteger o recurso", "body": "PDDE é pra manutenção, conservação e pequenos investimentos.\n\nQualquer item fora disso desvirtua a finalidade do programa — e a Resolução do FNDE pune com devolução."},
+        {"type": "content", "kicker": "QUE NEM ELE", "headline": "Item parecido com permitido é perigoso", "body": "TV de uso administrativo? Vedado.\nProjetor pra reunião com pais? Vedado.\nMobiliário pra sala dos professores? Análise caso a caso.\n\nQuando dúvida, melhor consultar antes de comprar."},
+        {"type": "program", "headline": "Lista de compras revisada por quem entende", "desc": "Antes de fechar orçamento, nossa equipe confere cada item pela Resolução vigente.", "items": ["Análise técnica gratuita da sua lista", "Indicação dos itens elegíveis por rubrica", "Substituição de itens vedados por equivalentes permitidos", "Resposta em até 24 horas úteis"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Manda sua lista de compras pra gente conferir", "body": "Acesse supraam.com.br/orcamento.\nAnexa sua lista preliminar.\nDevolvemos com análise + sugestão de kit já enquadrado.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#PDDE #FNDE #VedacoesPDDE #GestaoEscolar #ComprasPublicas"
+    },
+    {
+      "id": "03",
+      "slug": "kit-pdde-equidade-completo",
+      "scheduled_for": "2026-06-13",
+      "pillar": "kit",
+      "format": "carousel",
+      "caption": "R$ 378 MILHÕES estão sendo distribuídos pelo PDDE Equidade em 2026 pra 27 mil escolas vulneráveis (FNDE, mar/2026).\n\nA sua escola pode estar entre elas. E se for: o kit completo já existe.\n\nNesse carrossel: o que é o programa, quem é elegível, o que tem que ter no kit, e como receber sem demora.\n\n#PDDEEquidade #PDDE #FNDE #InclusaoEscolar #GestaoEscolar #EducacaoAmazonas",
+      "slides": [
+        {"type": "hook", "headline": "PDDE Equidade", "subheadline": "R$ 378 mi em jogo. Sua escola está pronta?", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / O programa", "headline": "Pra escolas em vulnerabilidade", "body": "PDDE Equidade financia ações pra REDUZIR DESIGUALDADES em escolas com alunos com deficiência, transtornos globais e altas habilidades.\n\nFoco: TEA, inclusão, AEE."},
+        {"type": "content", "kicker": "2 / Elegibilidade", "headline": "Sua escola pode estar elegível se", "body": "Tem matrículas com AEE no Censo Escolar.\n\nEstá em região de alta vulnerabilidade social.\n\nFoi listada pelo MEC no exercício 2026.\n\nNo PDDE Interativo, há uma aba específica pra confirmar adesão."},
+        {"type": "data", "kicker": "3 / Kit obrigatório", "headline": "O que TEM que ter", "items": ["Materiais pedagógicos para TEA", "Recursos de tecnologia assistiva", "Mobiliário adaptado e ergonômico", "Materiais sensoriais multissensoriais"]},
+        {"type": "content", "kicker": "4 / Erro #1", "headline": "Comprar sem laudo técnico", "body": "Cada item de tecnologia assistiva exige laudo técnico que comprove a finalidade pedagógica.\n\nSem o laudo, mesmo item certo é rejeitado.\n\nFornecedor sério já entrega com o laudo no kit."},
+        {"type": "program", "headline": "Kit PDDE Equidade Completo Supra AM", "desc": "Tudo que a Resolução exige, em um único orçamento técnico.", "items": ["Materiais TEA + multissensoriais", "Tecnologia assistiva com laudo por item", "Mobiliário ergonômico ajustável", "Documentação pronta pra prestação de contas"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Sua escola é elegível? A gente confere de graça.", "body": "Acesse supraam.com.br/orcamento.\nDescreva o quadro da sua escola.\nVerificamos elegibilidade + montamos kit.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#PDDEEquidade #PDDE #FNDE #InclusaoEscolar #GestaoEscolar #EducacaoAmazonas"
+    },
+    {
+      "id": "04",
+      "slug": "custeio-vs-capital-portaria-448",
+      "scheduled_for": "2026-06-16",
+      "pillar": "tutorial",
+      "format": "carousel",
+      "caption": "Custeio? Capital? Por que tanto gestor confunde?\n\nÉ a regra mais simples e a que mais derruba prestação de contas no PDDE.\n\nNesse carrossel: a Portaria 448/2002 explicada de uma vez, com exemplos práticos da realidade da escola pública.\n\nMarca um colega de UEx que precisa ler isso.\n\n#PDDE #FNDE #Portaria448 #GestaoEscolar #PrestacaoDeContas",
+      "slides": [
+        {"type": "hook", "headline": "Custeio ou Capital?", "subheadline": "A regra que mais derruba prestação", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / Origem", "headline": "Portaria 448/2002 — STN", "body": "É a Portaria da Secretaria do Tesouro Nacional que define como classificar gastos no setor público.\n\nO FNDE seguiu essa classificação no PDDE — e não admite mistura entre as duas naturezas."},
+        {"type": "content", "kicker": "2 / Custeio", "headline": "Despesas de manutenção", "body": "Bens de consumo (acabam ao usar) e serviços.\n\nEx.: papel A4, tinta, limpeza, reparo de cadeira existente, conta de luz, internet.\n\nValem por 1 ano."},
+        {"type": "content", "kicker": "3 / Capital", "headline": "Bens permanentes", "body": "Bens duráveis que entram no patrimônio da escola.\n\nEx.: cadeira nova, computador, lousa, mobiliário, equipamento.\n\nDurabilidade > 2 anos. Vão pro tombamento."},
+        {"type": "data", "kicker": "4 / Casos comuns", "headline": "Os 5 itens que confundem mais", "items": ["Pen drive → CUSTEIO (consumo, < R$ 100)", "Microfone → CAPITAL (permanente)", "Cartucho impressora → CUSTEIO (consumo)", "Impressora → CAPITAL (durável)", "Software anual → CUSTEIO (serviço)"]},
+        {"type": "content", "kicker": "5 / Consequência", "headline": "Misturou? Devolveu.", "body": "Se a escola recebeu PDDE Capital e gastou em custeio (ou vice-versa), o TCE rejeita e exige devolução.\n\nNão tem como justificar depois. Atenção desde o pedido de orçamento."},
+        {"type": "program", "headline": "Cada item no orçamento certo desde o início", "desc": "Nosso orçamento já vem com a rubrica correta por item, separada conforme Portaria 448.", "items": ["Itens de custeio em planilha separada", "Itens de capital em planilha separada", "NF emitida com a classificação certa", "Sugestão de plano de aplicação por modalidade"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Pede orçamento já enquadrado por rubrica", "body": "Acesse supraam.com.br/orcamento.\nA gente entrega com tudo separado.\nVocê só consolida no plano de aplicação.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#PDDE #FNDE #Portaria448 #GestaoEscolar #PrestacaoDeContas"
+    },
+    {
+      "id": "05",
+      "slug": "calendario-pdde-2026",
+      "scheduled_for": "2026-06-18",
+      "pillar": "evergreen",
+      "format": "carousel",
+      "caption": "Calendário PDDE 2026 — todos os prazos do ano em um post só.\n\nSalva esse aqui que vai te servir até dezembro. E marca um colega de UEx pra não perder nenhuma data.\n\nObs.: prazos baseados na Resolução vigente. Datas exatas no PDDE Interativo.\n\n#PDDE #FNDE #CalendarioPDDE2026 #GestaoEscolar #PDDEInterativo",
+      "slides": [
+        {"type": "hook", "headline": "Calendário PDDE 2026", "subheadline": "Todos os prazos críticos do ano", "footer": "Salva esse post"},
+        {"type": "data", "kicker": "JAN — MAR", "headline": "1º Trimestre", "items": ["Confirmação cadastro da UEx no PDDE Web", "Recadastramento anual obrigatório", "Verificação de pendências do exercício anterior", "Adesão a programas complementares (Equidade, Qualidade)"]},
+        {"type": "data", "kicker": "ABR — JUN", "headline": "2º Trimestre", "items": ["Primeira parcela do PDDE Básico (geralmente abril)", "PDDE Interativo: confirmação de adesão à PIEC", "Envio do Plano de Aplicação Financeira (PAF)", "Início da execução das compras"]},
+        {"type": "data", "kicker": "JUL — SET", "headline": "3º Trimestre", "items": ["Segunda parcela do PDDE Básico", "Monitoramento das ações no PDDE Interativo", "Atualização cadastral se houver mudanças", "Compras de capital e início da prestação de contas parcial"]},
+        {"type": "data", "kicker": "OUT — DEZ", "headline": "4º Trimestre", "items": ["31 de outubro: data limite pra regularizar pendências", "Conclusão das compras do exercício", "Prestação de contas completa no SIGPC", "Encerramento do exercício financeiro"]},
+        {"type": "content", "kicker": "DICA", "headline": "Não deixe pra dezembro", "body": "Quem deixa a prestação pro fim do ano sempre paga o preço.\n\nNF perdida, fornecedor sumido, item sem laudo. Em dezembro não há mais o que fazer.\n\nFaça parcial trimestralmente."},
+        {"type": "program", "headline": "Acompanhamos os prazos pra você", "desc": "Cliente nosso recebe alerta automático antes de cada data crítica.", "items": ["Lembrete 30/15/7 dias antes de cada prazo", "Apoio na elaboração do PAF", "Análise prévia da prestação de contas", "Suporte na regularização de pendências"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Quer ajuda nos prazos? Fala com a gente", "body": "Acesse supraam.com.br/orcamento.\nDeixa seu cadastro.\nA gente acompanha junto com você.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#PDDE #FNDE #CalendarioPDDE2026 #GestaoEscolar #PDDEInterativo"
+    },
+    {
+      "id": "06",
+      "slug": "kit-srm-completo",
+      "scheduled_for": "2026-06-20",
+      "pillar": "kit",
+      "format": "carousel",
+      "caption": "Sua escola tem Sala de Recursos Multifuncionais (SRM)? Tem todos os itens obrigatórios pela Resolução do FNDE?\n\nEsse carrossel mostra o que TEM que ter no kit — e onde a maioria das escolas erra.\n\nVai implantar ou ativar SRM em 2026? Chama no direct.\n\n#SRM #InclusaoEscolar #AEE #PDDE #FNDE #EducacaoEspecial",
+      "slides": [
+        {"type": "hook", "headline": "Kit SRM Completo", "subheadline": "Tudo que a Resolução do FNDE exige", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / Quem deve ter", "headline": "Escolas com matrículas em AEE", "body": "Toda escola da rede pública que tem alunos em Atendimento Educacional Especializado deve ter SRM.\n\nÉ obrigação da Lei Brasileira de Inclusão (LBI 13.146/2015)."},
+        {"type": "data", "kicker": "2 / TIPO I — Padrão", "headline": "Equipamentos obrigatórios", "items": ["Microcomputadores e estabilizadores", "Scanner e impressora", "Materiais pedagógicos adaptados", "Mobiliário ergonômico ajustável"]},
+        {"type": "data", "kicker": "3 / TIPO II — Ampliação", "headline": "Para deficiência visual", "items": ["Impressora Braille", "Scanner com leitor de voz", "Lupas eletrônicas", "Software de leitura de tela"]},
+        {"type": "content", "kicker": "4 / Erro mais comum", "headline": "Comprar sem laudo técnico", "body": "Equipamento de tecnologia assistiva exige laudo que comprove a finalidade pedagógica.\n\nSem laudo, o TCE rejeita.\n\nE: NF tem que descrever especificações detalhadas — não basta \"cadeira escolar\"."},
+        {"type": "content", "kicker": "5 / SRM ociosa", "headline": "Receber não basta. Tem que usar.", "body": "Muita escola recebe a SRM e ela passa o ano trancada.\n\nIsso é descumprimento do direito ao AEE.\n\nO kit certo vem com plano de uso sugerido + capacitação básica."},
+        {"type": "program", "headline": "Kit SRM Supra AM — Tipo I ou Tipo II", "desc": "Configuração completa conforme o perfil da sua escola, com tudo já documentado.", "items": ["Equipamentos com laudo técnico por item", "Mobiliário ergonômico ajustável", "Materiais pedagógicos adaptados", "Plano de uso pedagógico incluso"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Vai implantar ou ativar SRM em 2026?", "body": "Acesse supraam.com.br/orcamento.\nDescreva a configuração da sua escola.\nMontamos o kit certo pra seu perfil.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#SRM #InclusaoEscolar #AEE #PDDE #FNDE #EducacaoEspecial"
+    },
+    {
+      "id": "07",
+      "slug": "pdde-interativo-passo-a-passo",
+      "scheduled_for": "2026-06-23",
+      "pillar": "tutorial",
+      "format": "carousel",
+      "caption": "PDDE Interativo é o sistema do MEC que dá medo em gestor novo.\n\nNa real, são 5 passos. E quem entender, faz em 30 minutos.\n\nSalva esse carrossel pra usar no próximo PAF. Marca um diretor que está sofrendo com isso.\n\n#PDDEInterativo #PDDE #FNDE #PAF #GestaoEscolar",
+      "slides": [
+        {"type": "hook", "headline": "PDDE Interativo", "subheadline": "5 passos sem dor pra preencher o PAF", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "PASSO 1", "headline": "Acesso ao sistema", "body": "Entre em pddeinterativo.mec.gov.br com o login da UEx.\n\nNão tem login? Pede pro Comitê de Gestão Municipal ou Estadual.\n\nDica: nunca compartilhe senha. Diretor e tesoureiro têm acessos distintos."},
+        {"type": "content", "kicker": "PASSO 2", "headline": "Confirmação de adesão", "body": "Na aba do programa (PDDE Básico, Equidade, Qualidade ou Conectada), confirme que sua escola adere ao exercício.\n\nSem essa confirmação, NADA depois funciona."},
+        {"type": "content", "kicker": "PASSO 3", "headline": "Plano de Aplicação Financeira (PAF)", "body": "Liste como pretende gastar o recurso, item por item.\n\nSepare custeio e capital.\n\nDescreva com detalhe técnico (não \"material escolar\" — diga o que é).\n\nEssa lista vira sua prestação de contas no fim."},
+        {"type": "content", "kicker": "PASSO 4", "headline": "Monitoramento das ações", "body": "Durante o ano, atualize o sistema com o que foi executado.\n\nSe mudar de fornecedor ou item, registre.\n\nIsso protege quando o TCE conferir."},
+        {"type": "data", "kicker": "PASSO 5", "headline": "Regularizar pendências", "items": ["Verifique semestralmente se há alertas", "Pendência aberta = bloqueio do próximo repasse", "Resposta em até 30 dias pra pendências do FNDE", "Sempre anexe documentação ao responder"]},
+        {"type": "program", "headline": "Ajudamos você do PAF à prestação", "desc": "Cliente Supra AM recebe orientação técnica em cada etapa do PDDE Interativo.", "items": ["Modelo de PAF sugerido por modalidade", "Apoio na descrição técnica dos itens", "Análise prévia antes de enviar", "Auxílio na regularização de pendências"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Precisa de ajuda no seu PAF?", "body": "Acesse supraam.com.br/orcamento.\nDeixa seu cadastro.\nA gente envia modelo + orçamento já alinhado.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#PDDEInterativo #PDDE #FNDE #PAF #GestaoEscolar"
+    },
+    {
+      "id": "08",
+      "slug": "sinais-fornecedor-furada",
+      "scheduled_for": "2026-06-25",
+      "pillar": "evergreen",
+      "format": "carousel",
+      "caption": "5 sinais vermelhos que o fornecedor vai te dar dor de cabeça na prestação de contas.\n\nSe encontrar 2 ou mais, fuja.\n\nSalva esse post antes de fechar seu próximo orçamento. Marca um colega que tá negociando agora.\n\n#PDDE #FNDE #FornecedorEscola #ComprasPublicas #GestaoEscolar",
+      "slides": [
+        {"type": "hook", "headline": "5 sinais vermelhos", "subheadline": "Que o fornecedor vai te dar problema", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "SINAL 1", "headline": "NF com descrição genérica", "body": "Se o fornecedor manda orçamento dizendo só \"mobiliário escolar\" sem especificar tipo, dimensão, material, certificação — corre.\n\nNF emitida assim é rejeição garantida."},
+        {"type": "content", "kicker": "SINAL 2", "headline": "Prazo de entrega irreal", "body": "Promete entregar em 15 dias úteis no interior do AM? Mentira.\n\nFabricação + logística fluvial + modal aéreo levam 35-60 dias úteis.\n\nQuem promete menos, ou não conhece a região, ou não vai cumprir."},
+        {"type": "content", "kicker": "SINAL 3", "headline": "Sem assistência regional", "body": "Equipamento com defeito 6 meses depois.\n\nFornecedor em São Paulo, prazo de envio 30 dias, custo do envio por sua conta.\n\nSem técnico na região = você fica na mão."},
+        {"type": "content", "kicker": "SINAL 4", "headline": "Sem laudo técnico por item", "body": "Tecnologia assistiva sem laudo é item recusado pelo TCE.\n\nMobiliário sem laudo ergonômico é item rejeitado.\n\nFornecedor sério já entrega tudo documentado."},
+        {"type": "content", "kicker": "SINAL 5", "headline": "CNPJ com pendência ou novo demais", "body": "Confere o CNPJ no Receita Federal e Sefaz antes.\n\nCNPJ aberto há 3 meses, sem histórico, é risco alto.\n\nCNPJ com pendência fiscal = NF não vai ser aceita."},
+        {"type": "program", "headline": "Os 5 sinais reversos = nossa entrega", "desc": "A Supra AM cumpre cada um dos pontos opostos aos sinais vermelhos.", "items": ["NF com descrição técnica padronizada", "Prazo realista 35-60 dias úteis", "Atendimento regional em todo o Norte", "Laudos técnicos em cada item entregue"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Receba orçamento de quem entrega no Norte há anos", "body": "Acesse supraam.com.br/orcamento.\nDescreva o que precisa.\nDevolvemos com todos os 5 sinais reversos cumpridos.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#PDDE #FNDE #FornecedorEscola #ComprasPublicas #GestaoEscolar"
+    },
+    {
+      "id": "09",
+      "slug": "kit-educacao-conectada",
+      "scheduled_for": "2026-06-27",
+      "pillar": "kit",
+      "format": "carousel",
+      "caption": "Programa Educação Conectada não é só internet.\n\nÉ um KIT integrado: conectividade + dispositivos + capacitação. Sua escola precisa entender os 3 eixos antes de aderir.\n\nNesse carrossel: como o programa funciona e como receber o kit completo enquadrado.\n\n#EducacaoConectada #PIEC #PDDE #TecnologiaNaEducacao #GestaoEscolar",
+      "slides": [
+        {"type": "hook", "headline": "Educação Conectada", "subheadline": "3 eixos. 1 kit. Sua escola elegível?", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / O programa", "headline": "PIEC — Política de Inovação", "body": "Educação Conectada faz parte da Política de Inovação Educação Conectada (PIEC).\n\nObjetivo: levar conectividade + dispositivos + formação pra escolas públicas.\n\nRecurso vem via PDDE Conectividade."},
+        {"type": "content", "kicker": "EIXO 1", "headline": "Conectividade", "body": "Link de internet com banda adequada pra uso pedagógico.\n\nEscolas em áreas remotas: solução via satélite.\n\nAtenção: o programa cobre conectividade, não conta mensal recorrente."},
+        {"type": "content", "kicker": "EIXO 2", "headline": "Dispositivos", "body": "Notebooks, tablets, lousas digitais ou TVs interativas.\n\nEquipamentos com configuração mínima exigida e garantia técnica de 36 meses.\n\nQuantidade calculada por número de alunos."},
+        {"type": "content", "kicker": "EIXO 3", "headline": "Capacitação", "body": "Trilha de formação para professores e equipe pedagógica.\n\nSem capacitação, equipamento vira enfeite.\n\nO programa exige plano de uso pedagógico no PAF."},
+        {"type": "data", "kicker": "ADESÃO 2026", "headline": "Como aderir agora", "items": ["Confirmar adesão no PDDE Interativo (aba PIEC)", "Enviar Plano de Aplicação Financeira (PAF)", "Instalar Medidor Educação Conectada", "Regularizar pendências anteriores"]},
+        {"type": "program", "headline": "Kit Educação Conectada Supra AM", "desc": "Os 3 eixos integrados, com infraestrutura calculada pra sua escola.", "items": ["Conectividade dimensionada por porte", "Dispositivos homologados PIEC", "Plano de capacitação docente incluso", "Documentação pra PDDE Conectividade"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Quer apoio na adesão ao PIEC 2026?", "body": "Acesse supraam.com.br/orcamento.\nDescreva sua escola.\nAjudamos da adesão à entrega.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#EducacaoConectada #PIEC #PDDE #TecnologiaNaEducacao #GestaoEscolar"
+    },
+    {
+      "id": "10",
+      "slug": "saldo-reprogramado-pdde",
+      "scheduled_for": "2026-06-30",
+      "pillar": "tutorial",
+      "format": "carousel",
+      "caption": "Sobrou dinheiro do PDDE no fim do ano. E agora?\n\nDevolve? Joga fora? Perde no exercício seguinte?\n\nNenhuma das opções. Existe um nome técnico pra isso: SALDO REPROGRAMADO. E tem que ser declarado certo, senão vira pendência.\n\nNesse carrossel: como fazer.\n\n#PDDE #FNDE #SaldoReprogramado #PrestacaoDeContas #GestaoEscolar",
+      "slides": [
+        {"type": "hook", "headline": "Sobrou dinheiro do PDDE", "subheadline": "E agora? Não, não devolve.", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / O que é", "headline": "Saldo Reprogramado", "body": "É o dinheiro do PDDE que sobrou no exercício e vai ser usado no exercício seguinte.\n\nA Resolução do FNDE PERMITE isso — desde que seja declarado corretamente."},
+        {"type": "content", "kicker": "2 / Por que sobra", "headline": "Motivos comuns", "body": "Compra postergada por falta de fornecedor.\n\nPreços abaixo do orçado.\n\nEquipamento em manutenção e troca prevista pro próximo ano.\n\nProjeto pedagógico ainda em planejamento.\n\nTudo legítimo."},
+        {"type": "content", "kicker": "3 / Como declarar", "headline": "No formulário de prestação", "body": "Na prestação de contas, declara:\n\n1. RECEITAS: o valor recebido no exercício.\n2. DESPESAS: o que foi gasto.\n3. REPROGRAMAÇÃO DE SALDO: a diferença.\n\nO valor reprogramado vira receita do próximo exercício."},
+        {"type": "data", "kicker": "4 / Erros frequentes", "headline": "O que MAIS derruba", "items": ["Não declarar a reprogramação (vira pendência)", "Não vincular ao plano de aplicação do próximo ano", "Misturar saldo de modalidades diferentes (Equidade x Básico)", "Não atualizar o PDDE Interativo com a reprogramação"]},
+        {"type": "content", "kicker": "5 / Limite", "headline": "Atenção: reprogramar não é eterno", "body": "Saldo só pode ser reprogramado por 1 exercício seguinte.\n\nSe ficar sem uso por 2 exercícios, vira pendência grave.\n\nPlaneje pra usar até dezembro do ano seguinte."},
+        {"type": "program", "headline": "Plano de aplicação que evita sobra desnecessária", "desc": "Nosso plano sugerido equilibra custeio e capital pra você não cair em reprogramação sem motivo.", "items": ["Análise do saldo do exercício anterior", "Sugestão de aplicação do reprogramado", "Vinculação ao plano do ano seguinte", "Acompanhamento da execução trimestral"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Tem saldo reprogramado e não sabe usar?", "body": "Acesse supraam.com.br/orcamento.\nNos diga o valor e modalidade.\nSugerimos o melhor uso pra sua escola.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#PDDE #FNDE #SaldoReprogramado #PrestacaoDeContas #GestaoEscolar"
+    },
+    {
+      "id": "11",
+      "slug": "contrata-mais-brasil-pdde",
+      "scheduled_for": "2026-07-02",
+      "pillar": "evergreen",
+      "format": "carousel",
+      "caption": "Em dezembro/2025 o governo federal trouxe pro PDDE uma NOVIDADE que muda o jogo: a plataforma CONTRATA+BRASIL.\n\nO que é? O que muda? Vale a pena usar? Tem pegadinha?\n\nNesse carrossel: tudo explicado em 6 slides.\n\n#ContrataMaisBrasil #PDDE #FNDE #ComprasPublicas #GestaoEscolar",
+      "slides": [
+        {"type": "hook", "headline": "Contrata+Brasil no PDDE", "subheadline": "A novidade de 2025/2026 que muda o jogo", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / O que é", "headline": "Plataforma de contratação direta", "body": "É uma plataforma do governo federal pra escolas e UEx contratarem SERVIÇOS de manutenção e reparo.\n\nLançada em dezembro/2025. Integração com PDDE.\n\nIdeia: simplificar a contratação."},
+        {"type": "content", "kicker": "2 / O que pode contratar", "headline": "Serviços e pequenos reparos", "body": "Pintura, conserto elétrico, hidráulico, jardinagem, dedetização.\n\nMão de obra cadastrada pela própria plataforma.\n\nNF emitida pelo sistema. Pagamento direto."},
+        {"type": "content", "kicker": "3 / O que NÃO entra (ainda)", "headline": "Aquisição de bens", "body": "Não substitui compra de mobiliário, tecnologia, materiais pedagógicos.\n\nPara esses, continua o caminho tradicional: orçamento + 3 propostas + escolha.\n\nContrata+Brasil = só serviços."},
+        {"type": "content", "kicker": "4 / Em 2026", "headline": "Integração PNAE prevista", "body": "Plano é integrar o Programa Nacional de Alimentação Escolar (PNAE) na plataforma.\n\nQuando vier, vai permitir contratar fornecedores de alimentação direto.\n\nMudança grande pra escolas com merenda."},
+        {"type": "content", "kicker": "5 / Pegadinha", "headline": "Cuidado com a 'simplificação'", "body": "Plataforma facilita, mas você ainda precisa:\n\n— Garantir que o serviço é PDDE-elegível.\n— Declarar corretamente na prestação.\n— Documentar entrega e satisfação.\n\nFerramenta não tira responsabilidade do gestor."},
+        {"type": "program", "headline": "Aquisição de bens ainda é com a gente", "desc": "Contrata+Brasil resolve serviços. Pra COMPRAS, continuamos sendo a saída segura.", "items": ["Mobiliário, tecnologia, materiais", "Kits PDDE completos enquadrados", "NF padronizada FNDE", "Logística regional Norte"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Precisa de COMPRAS pro PDDE?", "body": "Acesse supraam.com.br/orcamento.\nDescreva sua lista.\nMontamos kit completo enquadrado.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#ContrataMaisBrasil #PDDE #FNDE #ComprasPublicas #GestaoEscolar"
+    },
+    {
+      "id": "12",
+      "slug": "kit-cantinho-leitura",
+      "scheduled_for": "2026-07-04",
+      "pillar": "kit",
+      "format": "carousel",
+      "caption": "Cantinho da Leitura é um dos programas que mais cresce no PDDE.\n\nMas tem uma regra técnica que pega muito gestor de surpresa: a divisão 70/30. Errar = recurso rejeitado.\n\nNesse carrossel: como o programa funciona + como receber o kit completo já enquadrado.\n\n#CantinhoDaLeitura #PDDE #FNDE #LeituraNaEscola #GestaoEscolar",
+      "slides": [
+        {"type": "hook", "headline": "Cantinho da Leitura", "subheadline": "Como aplicar sem errar a regra 70/30", "footer": "Carrossel — Supra AM"},
+        {"type": "content", "kicker": "1 / O programa", "headline": "Espaço pedagógico de leitura", "body": "Programa do PDDE pra escolas montarem ambientes de leitura na própria unidade.\n\nObjetivo: estimular o gosto pela leitura desde a alfabetização.\n\nRecurso descentralizado direto à UEx."},
+        {"type": "content", "kicker": "2 / A regra", "headline": "70/30 — explicada", "body": "A Resolução do FNDE OBRIGA a divisão do recurso:\n\n70% para ACERVO (livros, revistas).\n30% para ESPAÇO (mobiliário, mídia, decoração).\n\nMisturar essas porcentagens = rejeição."},
+        {"type": "data", "kicker": "3 / Os 70%", "headline": "Acervo elegível", "items": ["Livros de literatura infantil e juvenil", "Livros paradidáticos", "Revistas educativas catalogadas", "Materiais em Braille e LIBRAS"]},
+        {"type": "data", "kicker": "4 / Os 30%", "headline": "Espaço elegível", "items": ["Estantes baixas e expositores", "Almofadas e tapetes", "Pufes e mobiliário lúdico", "Decoração temática educativa"]},
+        {"type": "content", "kicker": "5 / Erro frequente", "headline": "100% em livros = recurso perdido", "body": "Parece o mais \"pedagógico\" comprar tudo em livro.\n\nMas viola a regra. A prestação é rejeitada.\n\nMonte a planilha 70/30 ANTES do primeiro orçamento."},
+        {"type": "program", "headline": "Kit Cantinho da Leitura 70/30 Supra AM", "desc": "Acervo + espaço + documentação técnica em um orçamento único, já no padrão FNDE.", "items": ["70% acervo: livros classificados por BNCC", "30% espaço: mobiliário e mídia adequados", "NF já dividida na proporção correta", "Plano de aplicação sugerido"], "link": "supraam.com.br/orcamento"},
+        {"type": "cta", "headline": "Vai montar Cantinho da Leitura?", "body": "Acesse supraam.com.br/orcamento.\nDescreva o porte da escola.\nMontamos kit 70/30 já enquadrado.", "footer": "@grupo.supraam · supraam.com.br/orcamento"}
+      ],
+      "hashtags": "#CantinhoDaLeitura #PDDE #FNDE #LeituraNaEscola #GestaoEscolar"
+    }
+  ]
+}
