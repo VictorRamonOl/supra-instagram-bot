@@ -38,6 +38,9 @@
 | Auto-refresh token IG | Antes de cada publish | RODANDO |
 | Blog Site_FNDE sync | Quando news monitor acha algo | RODANDO |
 | Vercel deploy | Push no Site_FNDE → auto | RODANDO |
+| **Google Search Console** | Sitemap processado (112 URLs) | RODANDO |
+| **Bing Webmaster** | Sitemap processado (112 URLs) | RODANDO |
+| **IndexNow → Bing/Yandex** | Auto-notifica em cada news nova | RODANDO |
 | Newsletter broadcast | — | PENDENTE |
 | Reels pipeline | — | PLANEJADO (REELS_PLAN.md) |
 | Meta Ads | — | PLANEJADO p/ 05/07/2026 (ADS_PROPOSTA.md) |
@@ -557,6 +560,49 @@ cd ../Site_FNDE && git commit --allow-empty -m "trigger redeploy" && git push
 
 ---
 
+## 15.1 SEO — Search Console + IndexNow (NOVO)
+
+### Google Search Console
+- **Propriedade**: `https://supraam.com.br/` verificada via arquivo HTML em `public/google752af23eb18a26a4.html`
+- **Sitemap**: `sitemap.xml` processado, 112 URLs detectadas
+- **Indexação manual**: 10 URLs prioritárias solicitadas (limite 10-12/dia)
+
+### Bing Webmaster
+- **Propriedade**: `supraam.com.br` verificada via login Google
+- **Sitemap**: importado automaticamente do robots.txt, 112 URLs
+
+### IndexNow (Bing/Yandex/Seznam/Naver)
+- **Chave**: `284142c04864c67111610badd2ccd911ff94b411a3c3dd9759d2bc99d0ae7bd8` (hardcoded em `scripts/news/indexnow.py`)
+- **Arquivo validação**: `Site_FNDE/public/<KEY>.txt` (público)
+- **Endpoint**: `https://api.indexnow.org/indexnow`
+
+### Fluxo automático (ativado em 2026-06-05)
+```
+News monitor encontra notícia
+  └─> generate_post.py cria slug
+       └─> add_pending(url) escreve em state/pending_indexnow.json
+            └─> monitor.yml push Site_FNDE pro Vercel
+                 └─> Vercel deploy (~60s)
+                      └─> sleep 90s + python -m scripts.news.indexnow
+                           └─> IndexNow notifica Bing/Yandex/Seznam
+                                └─> URLs indexadas em < 1 hora
+```
+
+### CLI manual (boost)
+```bash
+# Notifica URLs específicas
+python -m scripts.news.indexnow https://supraam.com.br/blog/algum-slug
+
+# Flush do pending file
+python -m scripts.news.indexnow
+```
+
+### Comprovação (2026-06-05)
+- ✅ Teste 1: 3 URLs → Status 202 ACEITO
+- ✅ Teste 2: 20 URLs (todas as prioritárias) → Status 200 ACEITO
+
+---
+
 ## 16. Decisões estratégicas (registro)
 
 | Data | Decisão | Por quê |
@@ -570,6 +616,7 @@ cd ../Site_FNDE && git commit --allow-empty -m "trigger redeploy" && git push
 | 2026-06-05 | Remover "glosa" do vocabulário | Acessibilidade pro decisor |
 | 2026-06-05 | Stories 2x/dia (9h + 18h BR) | Pico de engajamento; 60 stories/mês |
 | 2026-06-05 | Ads adiado pra 05/07/2026 | Esperar batch_002 + bio nova |
+| 2026-06-05 | GSC + Bing + IndexNow ativados | Site não aparecia no Google; agora 112 URLs registradas + indexação <1h via IndexNow |
 
 ---
 
