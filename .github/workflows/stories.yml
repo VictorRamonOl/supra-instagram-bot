@@ -2,7 +2,8 @@ name: publish-story
 
 on:
   schedule:
-    - cron: '0 12 * * *'   # Todo dia 12h UTC = 9h BR
+    - cron: '0 12 * * *'   # Todo dia 12h UTC = 9h BR (pico manhã)
+    - cron: '0 21 * * *'   # Todo dia 21h UTC = 18h BR (pico fim do dia)
   workflow_dispatch:
 
 jobs:
