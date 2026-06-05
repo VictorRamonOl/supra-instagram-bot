@@ -41,6 +41,9 @@
 | **Google Search Console** | Sitemap processado (112 URLs) | RODANDO |
 | **Bing Webmaster** | Sitemap processado (112 URLs) | RODANDO |
 | **IndexNow → Bing/Yandex** | Auto-notifica em cada news nova | RODANDO |
+| **Google Business Profile** | Perfil verificado, serviços, descrição | RODANDO |
+| **GBP weekly digest** | Domingo 20h BR — gera 2 posts pro GBP | RODANDO |
+| **SEO weekly metrics** | Domingo 20h BR — relatório completo | RODANDO |
 | Newsletter broadcast | — | PENDENTE |
 | Reels pipeline | — | PLANEJADO (REELS_PLAN.md) |
 | Meta Ads | — | PLANEJADO p/ 05/07/2026 (ADS_PROPOSTA.md) |
@@ -600,6 +603,45 @@ python -m scripts.news.indexnow
 ### Comprovação (2026-06-05)
 - ✅ Teste 1: 3 URLs → Status 202 ACEITO
 - ✅ Teste 2: 20 URLs (todas as prioritárias) → Status 200 ACEITO
+
+---
+
+## 15.2 Google Business Profile + Digest semanal (NOVO)
+
+### Estado do GBP (2026-06-05)
+- Perfil verificado: **Supra AM** em Manaus
+- Categoria atual: "Computer Shop" (revisão pendente; appeal submetido)
+- Telefone: (92) 98141-1712
+- 6+ serviços PDDE/Kits cadastrados (em revisão)
+- Documento de referência: **GBP_PLAYBOOK.md** (Q&A, produtos, posts, atributos, review script)
+
+### Sistema automático
+Todo domingo 23h UTC (20h BR), workflow `weekly-digest` roda:
+
+**1. GBP Weekly Digest** (`scripts/gbp/weekly_digest.py`)
+- Lê batch_002.json + stories.json + state/published.json
+- Escolhe 2 posts com categorias diferentes (kit + tutorial, evergreen + news, etc.)
+- Adapta a copy pra formato GBP (curto, CTA forte)
+- Escreve em `content/gbp_digest/YYYY-WW.md`
+- Você abre segunda de manhã, copia/cola, posta no GBP
+
+**2. SEO Weekly Metrics** (`scripts/seo/weekly_metrics.py`)
+- Tenta puxar dados do Search Console (se GSC_CREDENTIALS_JSON configurado)
+- Senão, gera template manual com checklist
+- Escreve em `content/seo_report/YYYY-WW.md`
+- Inclui: top queries, top URLs, sinais de alerta, ações da semana
+
+### Workflows ativos
+| Cron | Frequência | O que faz |
+|------|-----------|-----------|
+| `publish.yml` | Seg/Qua/Sex BR | Publica carrossel no Instagram |
+| `stories.yml` | Todo dia 9h + 18h BR | Publica story no Instagram |
+| `monitor.yml` | Toda hora `:15` | Procura notícias FNDE/PDDE |
+| `weekly_digest.yml` | Domingo 20h BR | **NOVO**: gera digest GBP + métricas SEO |
+
+### Setup pendente (opcional, V2)
+- **GSC_CREDENTIALS_JSON**: pra puxar métricas reais via API. Requer Service Account no Google Cloud Console. Quando configurar, relatório vem cheio de dados.
+- **Auto-post GBP**: API foi restringida pelo Google em 2022. Caminho atual = digest manual (95% automatizado, 5% manual = 4 min/semana). Caminhos pagos: Buffer (US$ 6/mês), Hootsuite (US$ 49/mês).
 
 ---
 

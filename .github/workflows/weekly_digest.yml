@@ -1,0 +1,49 @@
+name: weekly-digest
+
+on:
+  schedule:
+    # Domingo 23h UTC = 20h BR — gera digest GBP + relatório SEO
+    - cron: '0 23 * * 0'
+  workflow_dispatch:
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install deps
+        run: |
+          pip install requests python-dotenv
+          pip install google-api-python-client google-auth google-auth-httplib2 || true
+
+      - name: Generate GBP weekly digest
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python -m scripts.gbp.weekly_digest
+
+      - name: Generate SEO weekly metrics
+        env:
+          PYTHONIOENCODING: utf-8
+          GSC_CREDENTIALS_JSON: ${{ secrets.GSC_CREDENTIALS_JSON }}
+        run: python -m scripts.seo.weekly_metrics
+
+      - name: Commit digest files
+        run: |
+          git config user.name "supra-digest-bot"
+          git config user.email "actions@github.com"
+          git add content/gbp_digest/ content/seo_report/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nada novo pra commitar."
+          else
+            git commit -m "digest: semanal $(date -u +%Y-%m-%d_%H%M)"
+            git push
+          fi
