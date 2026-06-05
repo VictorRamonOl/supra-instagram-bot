@@ -1,0 +1,13 @@
+{
+  "id": "s002",
+  "type": "dado",
+  "spec": {
+    "id": "s002",
+    "type": "dado",
+    "label": "FNDE EM NÚMEROS",
+    "numero": "R$ 4,8 bi",
+    "descricao": "Foram repassados aos estados e municípios para a educação básica em junho/2026.",
+    "fonte": "Fonte: GOV.BR"
+  },
+  "generated_at": "2026-06-05T22:15:30.906848+00:00"
+}
