@@ -65,6 +65,7 @@ jobs:
           fi
 
       - name: Commit Site_FNDE (blog entry, se PAT)
+        id: commit_site
         if: steps.pat_check.outputs.has_pat == 'true'
         run: |
           cd _external/Site_FNDE
@@ -73,10 +74,31 @@ jobs:
           git add src/data/news.ts 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Sem nova entrada de blog."
+            echo "pushed=false" >> $GITHUB_OUTPUT
           else
             git commit -m "blog: news auto $(date -u +%Y-%m-%d_%H%M)"
             git remote set-url origin https://x-access-token:${{ secrets.GH_REPO_PAT }}@github.com/VictorRamonOl/Site_Fnde.git
             git push origin HEAD
+            echo "pushed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Notify IndexNow (Bing/Yandex) apos deploy
+        if: steps.commit_site.outputs.pushed == 'true'
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          if [ -f state/pending_indexnow.json ]; then
+            echo "Aguardando 90s pro Vercel deploy concluir..."
+            sleep 90
+            python -m scripts.news.indexnow
+            # Commita state limpo (pending zerado)
+            git add state/pending_indexnow.json 2>/dev/null || true
+            if ! git diff --cached --quiet; then
+              git commit -m "indexnow: flush pending $(date -u +%Y-%m-%d_%H%M)"
+              git push
+            fi
+          else
+            echo "Sem pending IndexNow — pulando."
           fi
 
       - name: Trigger publish (se PAT e fila tem item)

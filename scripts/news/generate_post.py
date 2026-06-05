@@ -517,6 +517,15 @@ def generate_for(article: dict):
     post_dir = render_post_dir(article, summary)
     print(f"  [post] queued em {post_dir.name}")
     append_blog_entry(article, summary, post_dir)
+
+    # IndexNow: enfileira a URL nova pra notificar Bing/Yandex apos deploy
+    try:
+        from scripts.news.indexnow import add_pending
+        slug = slugify(best_title(article, summary))
+        add_pending(f"https://supraam.com.br/blog/{slug}")
+    except Exception as e:
+        print(f"  [indexnow] falha ao enfileirar: {e}")
+
     return post_dir
 
 
