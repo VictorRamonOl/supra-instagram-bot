@@ -263,6 +263,20 @@ def save_seen(seen: dict):
 
 def find_new_articles(limit: int = None) -> list[dict]:
     seen = load_seen()
+
+    # HARD CAP: max 1 noticia publicada por dia (anti-spam algoritmico)
+    from datetime import datetime, timezone, timedelta
+    today_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    published_today = sum(
+        1 for v in seen.values()
+        if isinstance(v, dict)
+        and not v.get("skipped_duplicate_of_signature")
+        and v.get("found_at", "").startswith(today_utc)
+    )
+    if published_today >= 1:
+        print(f"[hard-cap] Ja foi publicada 1 noticia hoje ({today_utc}). Pulando.")
+        return []
+
     new = []
     seen_keys = set(seen.keys())
     seen_signatures = {
