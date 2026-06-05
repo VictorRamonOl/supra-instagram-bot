@@ -28,17 +28,31 @@ from generate_story import main as generate_story_main, mark_published
 
 
 def github_raw_url(image_path: Path) -> str:
-    """Constroi raw URL do GitHub pra imagem (so funciona em GH Actions com repo publico)."""
+    """Constroi raw URL do GitHub. Usa branch master (nao SHA) pra refletir commit recem-feito."""
     repo = os.getenv("GITHUB_REPOSITORY")
-    sha = os.getenv("GITHUB_SHA")
-    if not repo or not sha:
-        # Local: fallback host externo
+    if not repo:
         raise RuntimeError(
-            "GITHUB_REPOSITORY/SHA nao setados. "
-            "Story publishing precisa rodar em GH Actions com repo publico."
+            "GITHUB_REPOSITORY nao setado. Story publishing precisa rodar em GH Actions."
         )
     rel = image_path.resolve().relative_to(PROJECT_ROOT.resolve()).as_posix()
-    return f"https://raw.githubusercontent.com/{repo}/{sha}/{rel}"
+    return f"https://raw.githubusercontent.com/{repo}/master/{rel}"
+
+
+def commit_and_push_story(image_path: Path):
+    """Commita e empurra a imagem do story pra master, pra raw URL ficar acessivel."""
+    import subprocess
+    rel = image_path.resolve().relative_to(PROJECT_ROOT.resolve()).as_posix()
+    print(f"  Commitando {rel} pro master...")
+    subprocess.run(["git", "config", "user.name", "supra-story-bot"], check=True, cwd=PROJECT_ROOT)
+    subprocess.run(["git", "config", "user.email", "actions@github.com"], check=True, cwd=PROJECT_ROOT)
+    subprocess.run(["git", "add", rel], check=True, cwd=PROJECT_ROOT)
+    subprocess.run(
+        ["git", "commit", "-m", f"story: img {Path(rel).parent.name}"],
+        check=True, cwd=PROJECT_ROOT,
+    )
+    subprocess.run(["git", "push", "origin", "HEAD:master"], check=True, cwd=PROJECT_ROOT)
+    # Espera CDN do GitHub atualizar
+    time.sleep(8)
 
 
 def create_story_container(image_url: str) -> str:
@@ -93,7 +107,9 @@ def main():
     if not image.exists():
         raise RuntimeError(f"Imagem nao gerada: {image}")
 
-    print("\n[2/4] Hospedando imagem (GitHub raw)...")
+    print("\n[2/4] Commitando + hospedando imagem (GitHub raw)...")
+    if os.getenv("GITHUB_ACTIONS"):
+        commit_and_push_story(image)
     url = github_raw_url(image)
     print(f"  URL: {url}")
 
