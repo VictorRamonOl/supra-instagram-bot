@@ -1,0 +1,15 @@
+{
+  "id": "s003",
+  "type": "pergunta",
+  "spec": {
+    "id": "s003",
+    "type": "pergunta",
+    "pergunta": "Sua escola já recebeu o segundo repasse do PDDE Básico em 2026?",
+    "opcoes": [
+      "Sim, recebemos",
+      "Não, ainda não",
+      "Não sei dizer"
+    ]
+  },
+  "generated_at": "2026-06-06T13:44:51.854036+00:00"
+}
