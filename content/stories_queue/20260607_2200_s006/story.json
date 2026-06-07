@@ -1,0 +1,13 @@
+{
+  "id": "s006",
+  "type": "dado",
+  "spec": {
+    "id": "s006",
+    "type": "dado",
+    "label": "REALIDADE AM",
+    "numero": "+400",
+    "descricao": "Escolas do interior do Amazonas já passaram pelo nosso processo logístico.",
+    "fonte": "supraam.com.br"
+  },
+  "generated_at": "2026-06-07T22:00:14.156147+00:00"
+}
