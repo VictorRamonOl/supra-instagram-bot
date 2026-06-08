@@ -1,0 +1,16 @@
+{
+  "id": "s007",
+  "type": "pergunta",
+  "spec": {
+    "id": "s007",
+    "type": "pergunta",
+    "pergunta": "Qual é o item mais difícil de comprar com PDDE pra sua escola?",
+    "opcoes": [
+      "Mobiliário",
+      "Tecnologia",
+      "Brinquedos pedagógicos",
+      "Material de inclusão"
+    ]
+  },
+  "generated_at": "2026-06-08T15:54:12.890593+00:00"
+}
