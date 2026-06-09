@@ -1,0 +1,15 @@
+{
+  "id": "s010",
+  "type": "pergunta",
+  "spec": {
+    "id": "s010",
+    "type": "pergunta",
+    "pergunta": "Sua escola tem Sala de Recursos Multifuncionais (SRM)?",
+    "opcoes": [
+      "Sim, em pleno uso",
+      "Sim, mas pouco usada",
+      "Não temos"
+    ]
+  },
+  "generated_at": "2026-06-09T22:19:41.363467+00:00"
+}
