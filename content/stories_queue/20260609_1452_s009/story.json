@@ -1,0 +1,13 @@
+{
+  "id": "s009",
+  "type": "dado",
+  "spec": {
+    "id": "s009",
+    "type": "dado",
+    "label": "SRM NO NORTE",
+    "numero": "%",
+    "descricao": "Uma fatia preocupante das Salas de Recursos Multifuncionais do Norte ainda está inativa.",
+    "fonte": "Diagnóstico Supra AM"
+  },
+  "generated_at": "2026-06-09T14:52:47.432521+00:00"
+}
