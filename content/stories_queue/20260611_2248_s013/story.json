@@ -1,0 +1,13 @@
+{
+  "id": "s013",
+  "type": "dado",
+  "spec": {
+    "id": "s013",
+    "type": "dado",
+    "label": "PRAZO REAL",
+    "numero": "35-60",
+    "descricao": "Dias úteis é o intervalo realista de entrega no interior do AM. Quem promete menos, geralmente não cumpre.",
+    "fonte": "supraam.com.br"
+  },
+  "generated_at": "2026-06-11T22:48:33.183401+00:00"
+}
