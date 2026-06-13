@@ -1,0 +1,15 @@
+{
+  "id": "s014",
+  "type": "pergunta",
+  "spec": {
+    "id": "s014",
+    "type": "pergunta",
+    "pergunta": "Você prefere PDDE Básico, Equidade ou Qualidade pra sua escola?",
+    "opcoes": [
+      "Básico - manutenção",
+      "Equidade - inclusão",
+      "Qualidade - aprendizagem"
+    ]
+  },
+  "generated_at": "2026-06-13T14:01:25.680435+00:00"
+}
