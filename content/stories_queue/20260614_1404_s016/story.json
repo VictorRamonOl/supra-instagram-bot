@@ -1,0 +1,13 @@
+{
+  "id": "s016",
+  "type": "dado",
+  "spec": {
+    "id": "s016",
+    "type": "dado",
+    "label": "DICA REGIONAL",
+    "numero": "DEZ-JUN",
+    "descricao": "Período de cheia no AM: rios navegáveis, prazos melhores pra entrega fluvial.",
+    "fonte": "Equipe Supra AM"
+  },
+  "generated_at": "2026-06-14T14:04:09.016654+00:00"
+}
