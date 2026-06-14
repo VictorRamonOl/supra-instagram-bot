@@ -1,0 +1,16 @@
+{
+  "id": "s017",
+  "type": "pergunta",
+  "spec": {
+    "id": "s017",
+    "type": "pergunta",
+    "pergunta": "Quem decide as compras da sua escola pelo PDDE?",
+    "opcoes": [
+      "Diretor sozinho",
+      "Conselho da UEx",
+      "Secretaria municipal",
+      "Misto"
+    ]
+  },
+  "generated_at": "2026-06-14T22:04:55.854982+00:00"
+}
