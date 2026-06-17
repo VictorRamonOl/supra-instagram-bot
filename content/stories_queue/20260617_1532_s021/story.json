@@ -1,0 +1,15 @@
+{
+  "id": "s021",
+  "type": "pergunta",
+  "spec": {
+    "id": "s021",
+    "type": "pergunta",
+    "pergunta": "Sua escola usa o PDDE Interativo pra adesão e prestação?",
+    "opcoes": [
+      "Sim, tranquilo",
+      "Sim, mas com dúvidas",
+      "Ainda não"
+    ]
+  },
+  "generated_at": "2026-06-17T15:32:05.440169+00:00"
+}
