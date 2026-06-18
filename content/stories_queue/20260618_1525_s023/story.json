@@ -1,0 +1,13 @@
+{
+  "id": "s023",
+  "type": "dado",
+  "spec": {
+    "id": "s023",
+    "type": "dado",
+    "label": "EDUCAÇÃO CONECTADA",
+    "numero": "3 EIXOS",
+    "descricao": "Conectividade, dispositivos e capacitação. Programa só faz sentido com os três funcionando juntos.",
+    "fonte": "FNDE"
+  },
+  "generated_at": "2026-06-18T15:25:37.467961+00:00"
+}
