@@ -1,0 +1,15 @@
+{
+  "id": "s024",
+  "type": "pergunta",
+  "spec": {
+    "id": "s024",
+    "type": "pergunta",
+    "pergunta": "Sua escola tem internet estável pra alunos?",
+    "opcoes": [
+      "Sim, em sala de aula",
+      "Sim, só na secretaria",
+      "Não temos"
+    ]
+  },
+  "generated_at": "2026-06-18T22:55:36.473262+00:00"
+}
