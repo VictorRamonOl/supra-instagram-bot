@@ -1,0 +1,13 @@
+{
+  "id": "s027",
+  "type": "dado",
+  "spec": {
+    "id": "s027",
+    "type": "dado",
+    "label": "CATÁLOGO",
+    "numero": "850+",
+    "descricao": "Itens disponíveis no nosso catálogo, com enquadramento FNDE já pronto.",
+    "fonte": "supraam.com.br"
+  },
+  "generated_at": "2026-06-20T14:05:15.536479+00:00"
+}
