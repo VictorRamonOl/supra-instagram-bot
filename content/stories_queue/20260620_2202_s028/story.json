@@ -1,0 +1,16 @@
+{
+  "id": "s028",
+  "type": "pergunta",
+  "spec": {
+    "id": "s028",
+    "type": "pergunta",
+    "pergunta": "Qual seu maior medo na prestação de contas do PDDE?",
+    "opcoes": [
+      "Glosa por descrição errada",
+      "Item vedado por engano",
+      "Prazo perdido",
+      "Documentação incompleta"
+    ]
+  },
+  "generated_at": "2026-06-20T22:02:13.881152+00:00"
+}
