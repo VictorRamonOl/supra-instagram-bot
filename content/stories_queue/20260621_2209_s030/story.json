@@ -1,0 +1,13 @@
+{
+  "id": "s030",
+  "type": "dado",
+  "spec": {
+    "id": "s030",
+    "type": "dado",
+    "label": "MISSÃO",
+    "numero": "+7",
+    "descricao": "Estados do Norte atendidos pela Supra AM: AM, PA, RO, RR, AC, AP e TO.",
+    "fonte": "supraam.com.br"
+  },
+  "generated_at": "2026-06-21T22:09:33.625784+00:00"
+}
