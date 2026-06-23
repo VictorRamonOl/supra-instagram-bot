@@ -1,0 +1,13 @@
+{
+  "id": "s032",
+  "type": "dado",
+  "spec": {
+    "id": "s032",
+    "type": "dado",
+    "label": "PDDE 2026",
+    "numero": "138 mil",
+    "descricao": "Escolas atendidas pelo PDDE no Brasil. 37 milhões de alunos beneficiados.",
+    "fonte": "Fonte: FNDE"
+  },
+  "generated_at": "2026-06-23T14:50:01.414130+00:00"
+}
