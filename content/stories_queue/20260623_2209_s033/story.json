@@ -1,0 +1,16 @@
+{
+  "id": "s033",
+  "type": "pergunta",
+  "spec": {
+    "id": "s033",
+    "type": "pergunta",
+    "pergunta": "Sua escola já recebeu o PDDE Conectividade em 2026?",
+    "opcoes": [
+      "Sim, está chegando",
+      "Sim, mas saldo travado",
+      "Não recebemos",
+      "Nem sei se tenho direito"
+    ]
+  },
+  "generated_at": "2026-06-23T22:09:24.349965+00:00"
+}
