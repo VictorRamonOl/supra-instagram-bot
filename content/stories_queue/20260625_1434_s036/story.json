@@ -1,0 +1,13 @@
+{
+  "id": "s036",
+  "type": "dado",
+  "spec": {
+    "id": "s036",
+    "type": "dado",
+    "label": "PDDE EQUIDADE 2026",
+    "numero": "27 mil",
+    "descricao": "Escolas vulneráveis vão receber recursos específicos pelo programa Equidade.",
+    "fonte": "Fonte: FNDE"
+  },
+  "generated_at": "2026-06-25T14:34:03.113695+00:00"
+}
