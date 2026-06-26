@@ -1,0 +1,13 @@
+{
+  "id": "s039",
+  "type": "dado",
+  "spec": {
+    "id": "s039",
+    "type": "dado",
+    "label": "PRAZO CRÍTICO",
+    "numero": "31/10",
+    "descricao": "Data limite anual pra regularizar pendências do PDDE. Depois disso, próximo repasse trava.",
+    "fonte": "Resolução FNDE"
+  },
+  "generated_at": "2026-06-26T22:07:01.255518+00:00"
+}
