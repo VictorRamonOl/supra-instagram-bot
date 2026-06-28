@@ -1,0 +1,16 @@
+{
+  "id": "s043",
+  "type": "pergunta",
+  "spec": {
+    "id": "s043",
+    "type": "pergunta",
+    "pergunta": "Qual sua maior dor com a Resolução do FNDE?",
+    "opcoes": [
+      "Mudanças constantes",
+      "Linguagem técnica difícil",
+      "Falta de exemplos práticos",
+      "Não sei interpretar"
+    ]
+  },
+  "generated_at": "2026-06-28T21:58:18.346507+00:00"
+}
