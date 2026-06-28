@@ -1,0 +1,13 @@
+{
+  "id": "s042",
+  "type": "dado",
+  "spec": {
+    "id": "s042",
+    "type": "dado",
+    "label": "TEMPO",
+    "numero": "3 dias",
+    "descricao": "É o prazo da Supra AM pra devolver orçamento técnico completo. Útil quando o tempo aperta.",
+    "fonte": "supraam.com.br"
+  },
+  "generated_at": "2026-06-28T13:47:15.536514+00:00"
+}
