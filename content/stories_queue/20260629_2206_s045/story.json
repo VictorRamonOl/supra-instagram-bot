@@ -1,0 +1,13 @@
+{
+  "id": "s045",
+  "type": "dado",
+  "spec": {
+    "id": "s045",
+    "type": "dado",
+    "label": "RECURSOS 2026",
+    "numero": "R$ 415 mi",
+    "descricao": "Primeira parcela do PDDE Básico repassada em abril/2026.",
+    "fonte": "Fonte: FNDE"
+  },
+  "generated_at": "2026-06-29T22:06:16.115446+00:00"
+}
