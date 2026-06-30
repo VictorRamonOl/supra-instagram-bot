@@ -1,0 +1,16 @@
+{
+  "id": "s046",
+  "type": "pergunta",
+  "spec": {
+    "id": "s046",
+    "type": "pergunta",
+    "pergunta": "Sua escola tem Conselho da UEx ativo?",
+    "opcoes": [
+      "Sim, reúne todo mês",
+      "Sim, mas só no PDDE",
+      "Não tem, só o diretor decide",
+      "Não sei o que é"
+    ]
+  },
+  "generated_at": "2026-06-30T14:19:24.665244+00:00"
+}
