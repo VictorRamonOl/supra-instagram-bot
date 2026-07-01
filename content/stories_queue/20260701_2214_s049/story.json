@@ -1,0 +1,13 @@
+{
+  "id": "s049",
+  "type": "dado",
+  "spec": {
+    "id": "s049",
+    "type": "dado",
+    "label": "MOBILIÁRIO",
+    "numero": "5 anos",
+    "descricao": "É a durabilidade média esperada pra mobiliário escolar de qualidade. Madeira certificada + ergonomia INMETRO faz diferença.",
+    "fonte": "Equipe Supra AM"
+  },
+  "generated_at": "2026-07-01T22:14:35.178156+00:00"
+}
