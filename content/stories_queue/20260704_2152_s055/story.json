@@ -1,0 +1,13 @@
+{
+  "id": "s055",
+  "type": "dado",
+  "spec": {
+    "id": "s055",
+    "type": "dado",
+    "label": "GARANTIA",
+    "numero": "36 meses",
+    "descricao": "Equipamentos de Educação Conectada têm garantia técnica obrigatória de 36 meses. Confere antes de fechar.",
+    "fonte": "Equipe Supra AM"
+  },
+  "generated_at": "2026-07-04T21:52:42.283669+00:00"
+}
