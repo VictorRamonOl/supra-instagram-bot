@@ -1,0 +1,16 @@
+{
+  "id": "s056",
+  "type": "pergunta",
+  "spec": {
+    "id": "s056",
+    "type": "pergunta",
+    "pergunta": "Sua escola precisa de orçamento técnico pra compra com PDDE?",
+    "opcoes": [
+      "Sim, agora",
+      "Em breve",
+      "Já tenho fornecedor",
+      "Tô pesquisando"
+    ]
+  },
+  "generated_at": "2026-07-05T13:39:59.807807+00:00"
+}
