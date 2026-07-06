@@ -1,0 +1,13 @@
+{
+  "id": "s058",
+  "type": "dado",
+  "spec": {
+    "id": "s058",
+    "type": "dado",
+    "label": "PROGRAMA",
+    "numero": "31 anos",
+    "descricao": "Anos completados pelo PDDE em maio/2026. É o programa mais antigo de descentralização de recursos pra educação básica no Brasil.",
+    "fonte": "Fonte: FNDE"
+  },
+  "generated_at": "2026-07-06T15:33:49.548130+00:00"
+}
